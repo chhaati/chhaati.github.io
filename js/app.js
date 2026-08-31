@@ -1,4 +1,4 @@
-/* IronLog — main app */
+/* IronLog — main app ("Volt Forge" UI) */
 (function () {
   "use strict";
 
@@ -10,17 +10,17 @@
   EX.forEach(function (e) { EX_BY_ID[e.id] = e; });
 
   var GROUPS = [
-    { id: "chest",     label: "Chest",     day: "Chest Day",    color: "var(--g-chest)",     emoji: "🫁" },
-    { id: "back",      label: "Back",      day: "Back Day",     color: "var(--g-back)",      emoji: "🪽" },
-    { id: "legs",      label: "Legs",      day: "Leg Day",      color: "var(--g-legs)",      emoji: "🦵" },
-    { id: "shoulders", label: "Shoulders", day: "Shoulder Day", color: "var(--g-shoulders)", emoji: "🏔️" },
-    { id: "arms",      label: "Arms",      day: "Arm Day",      color: "var(--g-arms)",      emoji: "💪" },
-    { id: "core",      label: "Core",      day: "Core Day",     color: "var(--g-core)",      emoji: "🎯" },
-    { id: "cardio",    label: "Cardio",    day: "Cardio Day",   color: "var(--g-cardio)",    emoji: "❤️" }
+    { id: "chest",     label: "Chest",     day: "Chest Day",    color: "var(--g-chest)" },
+    { id: "back",      label: "Back",      day: "Back Day",     color: "var(--g-back)" },
+    { id: "legs",      label: "Legs",      day: "Leg Day",      color: "var(--g-legs)" },
+    { id: "shoulders", label: "Shoulders", day: "Shoulder Day", color: "var(--g-shoulders)" },
+    { id: "arms",      label: "Arms",      day: "Arm Day",      color: "var(--g-arms)" },
+    { id: "core",      label: "Core",      day: "Core Day",     color: "var(--g-core)" },
+    { id: "cardio",    label: "Cardio",    day: "Cardio Day",   color: "var(--g-cardio)" }
   ];
   function groupMeta(id) {
     for (var i = 0; i < GROUPS.length; i++) if (GROUPS[i].id === id) return GROUPS[i];
-    return { id: id, label: id, day: id, color: "var(--muted)", emoji: "🏋️" };
+    return { id: id, label: id, day: id, color: "var(--text-mid)" };
   }
   var EQUIP_LABEL = {
     machine: "Machine", barbell: "Barbell", dumbbell: "Dumbbell", cable: "Cable",
@@ -39,6 +39,7 @@
     return t.content.firstElementChild;
   }
   function fmtInt(n) { return Math.round(n).toLocaleString("en-US"); }
+  var CK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>';
 
   function toast(msg, cls, ms) {
     var root = document.getElementById("toast-root");
@@ -49,12 +50,11 @@
   }
 
   function confetti() {
-    var colors = ["#a3e635", "#fbbf24", "#f472b6", "#60a5fa", "#c084fc", "#34d399"];
+    var colors = ["#a3e635", "#facc15", "#f472b6", "#60a5fa", "#c084fc", "#34d399"];
     for (var i = 0; i < 26; i++) {
       (function () {
         var b = h('<div class="confetti-bit"></div>');
-        var x = 10 + Math.random() * 80;
-        b.style.left = x + "vw";
+        b.style.left = (10 + Math.random() * 80) + "vw";
         b.style.top = "-20px";
         b.style.background = colors[Math.floor(Math.random() * colors.length)];
         b.style.transform = "rotate(" + Math.random() * 360 + "deg)";
@@ -67,6 +67,21 @@
         setTimeout(function () { b.remove(); }, dur);
       })();
     }
+  }
+
+  /* count-up animation for stat numerals */
+  function countUp(el, target, suffix, delay) {
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) { el.textContent = fmtInt(target) + (suffix || ""); return; }
+    var t0 = null, DUR = 800;
+    function frame(ts) {
+      if (!t0) t0 = ts;
+      var p = Math.min(1, (ts - t0) / DUR);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmtInt(target * eased) + (suffix || "");
+      if (p < 1) requestAnimationFrame(frame);
+    }
+    setTimeout(function () { requestAnimationFrame(frame); }, delay || 0);
   }
 
   /* pause offscreen SMIL animations for performance */
@@ -84,13 +99,12 @@
     if (svgObserver) svgObserver.observe(container);
   }
 
-  /* ================= modal / sheet ================= */
+  /* ================= modal ================= */
   function openModal(innerHTML) {
     var back = h('<div class="modal-back"><div class="modal"><div class="grab"></div>' + innerHTML + "</div></div>");
     back.addEventListener("click", function (e) { if (e.target === back) closeModal(back); });
-    var onKey = function (e) { if (e.key === "Escape") { closeModal(back); } };
+    var onKey = function (e) { if (e.key === "Escape") closeModal(back); };
     document.addEventListener("keydown", onKey);
-    back.addEventListener("remove", function () {});
     var origRemove = back.remove.bind(back);
     back.remove = function () { document.removeEventListener("keydown", onKey); origRemove(); };
     document.getElementById("modal-root").appendChild(back);
@@ -106,7 +120,7 @@
   function applyTheme(t) {
     document.documentElement.setAttribute("data-theme", t);
     var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", t === "dark" ? "#0b0f14" : "#f2f5f8");
+    if (meta) meta.setAttribute("content", t === "dark" ? "#0b0b0f" : "#f2f3f5");
   }
   function setTheme(t) {
     S.data.settings.theme = t;
@@ -116,7 +130,7 @@
   applyTheme(S.data.settings.theme);
   document.getElementById("btn-theme").addEventListener("click", function () {
     setTheme(S.data.settings.theme === "dark" ? "light" : "dark");
-    if (state.tab === "settings") render(); // keep the settings segment in sync
+    if (state.tab === "settings") render();
   });
 
   /* ================= router ================= */
@@ -134,7 +148,14 @@
     var b = e.target.closest(".nav-btn");
     if (b) switchTab(b.dataset.tab);
   });
-  document.getElementById("btn-timer").addEventListener("click", function () { openTimer(); });
+  document.getElementById("btn-settings").addEventListener("click", function () { switchTab("settings"); });
+  document.getElementById("btn-timer").addEventListener("click", function () { startRest(); });
+  document.getElementById("nav-fab").addEventListener("click", function () {
+    var sg = suggestedGroup();
+    state.group = sg.id; state.q = ""; state.equip = "all";
+    switchTab("exercises");
+    toast(sg.day.toUpperCase() + " — let's go 💪");
+  });
 
   function render() {
     var v = document.getElementById("view");
@@ -142,7 +163,7 @@
     ({ home: renderHome, exercises: renderExercises, history: renderHistory, goals: renderGoals, settings: renderSettings }[state.tab] || renderHome)(v);
   }
 
-  /* ================= exercise of the day ================= */
+  /* ================= smart picks ================= */
   function hashStr(s) {
     var x = 0;
     for (var i = 0; i < s.length; i++) { x = (x * 31 + s.charCodeAt(i)) >>> 0; }
@@ -156,9 +177,7 @@
     pool = pool.slice().sort(function (a, b) { return a.id < b.id ? -1 : 1; });
     return pool[hashStr(S.today()) % pool.length];
   }
-
   function suggestedGroup() {
-    // least-recently-trained muscle group (cardio excluded from rotation)
     var lastByGroup = {};
     S.data.logs.forEach(function (l) {
       var ex = EX_BY_ID[l.exerciseId];
@@ -176,62 +195,126 @@
   /* ================= HOME ================= */
   function renderHome(v) {
     var s = S.data.settings;
+    var byDate = S.logsByDate();
+
+    /* week strip */
+    var mon = S.mondayOf(new Date());
+    var strip = h('<div class="weekstrip"><div class="days"></div></div>');
+    var daysEl = strip.querySelector(".days");
+    var names = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+    for (var i = 0; i < 7; i++) {
+      var d = new Date(mon); d.setDate(d.getDate() + i);
+      var ds = S.dstr(d);
+      var done = !!byDate[ds];
+      var today = ds === S.today();
+      daysEl.appendChild(h('<div class="wday' + (done ? " done" : "") + (today ? " today" : "") + '"><span>' + names[i] + "</span><i>" + (done ? "✓" : d.getDate()) + "</i></div>"));
+    }
+    v.appendChild(strip);
+
+    /* hero card */
+    var sg = suggestedGroup();
+    var groupExs = EX.filter(function (e) { return e.group === sg.id; });
+    var lastTrained = null;
+    S.data.logs.forEach(function (l) {
+      var ex = EX_BY_ID[l.exerciseId];
+      if (ex && ex.group === sg.id && (!lastTrained || l.date > lastTrained)) lastTrained = l.date;
+    });
+    var lastTxt = lastTrained
+      ? "last trained " + new Date(lastTrained + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" })
+      : "never trained — fresh start";
     var hour = new Date().getHours();
-    var greet = hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
-    var name = s.name ? ", " + esc(s.name) : "";
+    var greet = hour < 12 ? "morning" : hour < 18 ? "afternoon" : "evening";
+    var hero = h(
+      '<div class="hero-card">' +
+        '<div class="eyebrow">Today · good ' + greet + (s.name ? ", " + esc(s.name) : "") + (s.gymName ? " · " + esc(s.gymName) : "") + "</div>" +
+        '<div class="hero-title">' + esc(sg.day) + "</div>" +
+        '<div class="hero-meta">' +
+          '<span class="tag">' + groupExs.length + " exercises</span>" +
+          '<span class="tag">' + esc(lastTxt) + "</span>" +
+          '<span class="tag">🔥 ' + S.weekStreak() + "-week streak</span>" +
+        "</div>" +
+        '<button class="btn primary">Start ' + esc(sg.day) + " →</button>" +
+      "</div>"
+    );
+    hero.querySelector(".btn").addEventListener("click", function () {
+      state.group = sg.id; state.q = ""; state.equip = "all";
+      switchTab("exercises");
+    });
+    v.appendChild(hero);
+
+    /* bento stats */
     var week = S.workoutsThisWeek();
     var target = s.weeklyTarget || 3;
     var pct = Math.min(1, week / target);
+    var R = 26, C = 2 * Math.PI * R;
+    var weekVol = 0;
+    S.data.logs.forEach(function (l) {
+      var d = new Date(l.date + "T12:00:00");
+      if (d >= mon) l.sets.forEach(function (st) { if (st.w && st.r) weekVol += st.w * st.r; });
+    });
+    var weekVolDisp = s.units === "lb" ? S.fromKg(weekVol) : weekVol;
 
-    var R = 32, C = 2 * Math.PI * R;
-    v.appendChild(h(
-      '<div class="card hero">' +
-        "<div><h1>" + greet + name + " 👋</h1>" +
-        '<div class="sub">' + new Date().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" }) +
-        (s.gymName ? ' · <b style="color:var(--acc)">' + esc(s.gymName) + "</b>" : "") + "</div></div>" +
-        '<div class="ring-wrap"><svg width="74" height="74" viewBox="0 0 74 74">' +
-          '<circle cx="37" cy="37" r="' + R + '" fill="none" stroke="var(--card-2)" stroke-width="7"/>' +
-          '<circle cx="37" cy="37" r="' + R + '" fill="none" stroke="var(--acc)" stroke-width="7" stroke-linecap="round" stroke-dasharray="' + C + '" stroke-dashoffset="' + (C * (1 - pct)) + '"/>' +
-        "</svg>" +
-        '<div class="ring-num">' + week + "/" + target + "<small>this week</small></div></div>" +
+    var bento = h(
+      '<div class="bento">' +
+        '<div class="tile"><div class="tile-ring">' +
+          '<svg width="60" height="60" viewBox="0 0 60 60">' +
+            '<circle cx="30" cy="30" r="' + R + '" fill="none" stroke="var(--bg-3)" stroke-width="7"/>' +
+            '<circle class="ring-prog" cx="30" cy="30" r="' + R + '" fill="none" stroke="var(--accent)" stroke-width="7" stroke-linecap="round" stroke-dasharray="' + C + '" stroke-dashoffset="' + C + '"/>' +
+          "</svg>" +
+          '<div><div class="eyebrow">This week</div><div class="tnum num">' + week + "<small>/ " + target + "</small></div></div>" +
+        "</div></div>" +
+        '<div class="tile"><div class="eyebrow">Workouts</div><div class="tnum num" data-cu="' + S.workoutDates().length + '">0</div>' +
+          '<div class="delta">all time</div></div>' +
+        '<div class="tile"><div class="eyebrow">Moves learned</div><div class="tnum num" data-cu="' + S.data.learned.length + '">0<small>/ ' + EX.length + "</small></div>" +
+          '<div class="delta">' + Math.round((S.data.learned.length / Math.max(1, EX.length)) * 100) + "% of library</div></div>" +
+        '<div class="tile"><div class="eyebrow">Volume this week</div><div class="tnum num" data-cu="' + Math.round(weekVolDisp) + '">0<small>' + s.units + "</small></div>" +
+          '<div class="delta">total lifted</div></div>' +
       "</div>"
-    ));
+    );
+    v.appendChild(bento);
+    requestAnimationFrame(function () {
+      bento.querySelector(".ring-prog").style.strokeDashoffset = C * (1 - pct);
+    });
+    bento.querySelectorAll("[data-cu]").forEach(function (el, i) {
+      var target2 = parseFloat(el.dataset.cu);
+      var small = el.querySelector("small");
+      var smallHTML = small ? small.outerHTML : "";
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce) { el.innerHTML = fmtInt(target2) + smallHTML; return; }
+      var t0 = null, DUR = 800;
+      setTimeout(function () {
+        requestAnimationFrame(function frame(ts) {
+          if (!t0) t0 = ts;
+          var p = Math.min(1, (ts - t0) / DUR);
+          el.innerHTML = fmtInt(target2 * (1 - Math.pow(1 - p, 3))) + smallHTML;
+          if (p < 1) requestAnimationFrame(frame);
+        });
+      }, i * 60);
+    });
 
-    // stats
-    var prCount = 0;
-    EX.forEach(function (e) { if (S.prWeight(e.id) != null) prCount++; });
-    v.appendChild(h(
-      '<div class="statgrid">' +
-        '<div class="stat"><b>' + S.weekStreak() + " 🔥</b><span>week streak</span></div>" +
-        '<div class="stat"><b>' + S.workoutDates().length + "</b><span>workouts</span></div>" +
-        '<div class="stat"><b>' + S.data.learned.length + "/" + EX.length + "</b><span>learned</span></div>" +
-        '<div class="stat"><b>' + prCount + "</b><span>lifts w/ PR</span></div>" +
-      "</div>"
-    ));
-
-    // first-visit welcome
+    /* first-visit welcome */
     if (!S.data.logs.length && !S.data.learned.length) {
       v.appendChild(h(
-        '<div class="card" style="margin-top:14px">' +
-          "<h3 style='font-size:16px'>Welcome to IronLog 🎉</h3>" +
-          '<p class="small muted" style="margin:8px 0 0">Built for gym newbies. Learn one exercise a day, log the weight you used on each machine, and IronLog will remember it for next time — everything is stored <b>on this device</b> (export a backup anytime from Settings).</p>' +
+        '<div class="card">' +
+          "<h3 style='font-size:15.5px;font-weight:700'>Welcome to IronLog 🎉</h3>" +
+          '<p class="small muted" style="margin:8px 0 0">Built for gym newbies. Learn one exercise a day, log the weight you use on each machine, and IronLog remembers it for next time — everything stays <b>on this device</b> (backup anytime from Settings ⚙).</p>' +
         "</div>"
       ));
     }
 
-    // exercise of the day
+    /* exercise of the day */
     var eotd = exerciseOfTheDay();
     if (eotd) {
       var learned = S.isLearned(eotd.id);
       var card = h(
         '<div class="card eotd"><div class="glow"></div>' +
-          '<div class="eotd-head"><span class="tag" style="color:var(--acc);border-color:var(--acc)">✨ Exercise of the day</span>' +
+          '<div class="eotd-head"><span class="eyebrow" style="color:var(--accent-text)">✦ Exercise of the day</span>' +
           '<span class="tag">' + esc(groupMeta(eotd.group).label) + "</span></div>" +
           '<div class="eotd-body">' +
             '<div class="eotd-fig">' + eotd.svg + "</div>" +
             "<div><h3>" + esc(eotd.name) + "</h3>" +
             '<div class="small muted">' + esc(eotd.primary.join(", ")) + " · " + esc(EQUIP_LABEL[eotd.equipment] || eotd.equipment) + "</div>" +
-            '<div class="small muted" style="margin-top:4px">' + esc(eotd.setsReps) + "</div></div>" +
+            '<div class="small faint" style="margin-top:4px">' + esc(eotd.setsReps) + "</div></div>" +
           "</div>" +
           '<div class="eotd-actions">' +
             '<button class="btn primary" data-act="open">Learn it →</button>' +
@@ -247,34 +330,9 @@
         checkGoalCompletion();
       });
       v.appendChild(card);
-    } else {
-      v.appendChild(h('<div class="card"><p class="muted small">Exercise library not loaded — check that the <code>data/</code> files are present.</p></div>'));
     }
 
-    // today's split
-    var sg = suggestedGroup();
-    var split = h(
-      '<div class="card dayplan-card">' +
-        '<div style="display:flex;justify-content:space-between;align-items:center">' +
-          "<h3 style='font-size:16px'>Pick today's focus</h3>" +
-          '<span class="small muted">suggested: <b style="color:var(--acc)">' + esc(sg.label) + "</b></span>" +
-        "</div>" +
-        '<div class="chip-row" id="home-groups"></div>' +
-      "</div>"
-    );
-    var row = split.querySelector("#home-groups");
-    GROUPS.forEach(function (g) {
-      var c = h('<button class="chip"><span class="dot" style="background:' + g.color + '"></span>' + g.emoji + " " + esc(g.day) + "</button>");
-      if (g.id === sg.id) c.style.borderColor = "var(--acc)";
-      c.addEventListener("click", function () {
-        state.group = g.id; state.q = ""; state.equip = "all";
-        switchTab("exercises");
-      });
-      row.appendChild(c);
-    });
-    v.appendChild(split);
-
-    // recent activity
+    /* recent activity */
     var recent = S.data.logs.slice().sort(function (a, b) { return b.ts - a.ts; }).slice(0, 3);
     if (recent.length) {
       v.appendChild(h('<div class="section-title">Recent activity</div>'));
@@ -295,7 +353,7 @@
       "</div>"
     ));
 
-    var gRow = h('<div class="chip-row" style="margin-bottom:9px"></div>');
+    var gRow = h('<div class="chip-row" style="margin-bottom:8px"></div>');
     var allChip = h('<button class="chip' + (state.group === "all" ? " active" : "") + '">All</button>');
     allChip.addEventListener("click", function () { state.group = "all"; renderList(); syncChips(); });
     gRow.appendChild(allChip);
@@ -311,7 +369,7 @@
     var eRow = h('<div class="chip-row" style="margin-bottom:14px"></div>');
     eqs.forEach(function (eq) {
       var lbl = eq === "all" ? "Any equipment" : (EQUIP_LABEL[eq] || eq);
-      var c = h('<button class="chip' + (state.equip === eq ? " active" : "") + '" data-e="' + eq + '" style="font-size:12px;padding:6px 12px">' + esc(lbl) + "</button>");
+      var c = h('<button class="chip' + (state.equip === eq ? " active" : "") + '" data-e="' + eq + '" style="height:28px;font-size:11.5px">' + esc(lbl) + "</button>");
       c.addEventListener("click", function () { state.equip = eq; renderList(); syncChips(); });
       eRow.appendChild(c);
     });
@@ -340,7 +398,7 @@
       });
       list.sort(function (a, b) { return a.level - b.level || (a.name < b.name ? -1 : 1); });
       if (!list.length) {
-        grid.appendChild(h('<div class="empty" style="grid-column:1/-1"><div class="big">🔍</div>No exercises match.<br><span class="small">The exercise library may still be loading — or try another filter.</span></div>'));
+        grid.appendChild(h('<div class="empty" style="grid-column:1/-1"><div class="big">🔍</div>No exercises match.</div>'));
         return;
       }
       list.forEach(function (e) {
@@ -349,9 +407,9 @@
         var best = last ? S.bestSet(last) : null;
         var lastTxt = "";
         if (best) {
-          if (e.trackMode === "weight" && best.w != null) lastTxt = "Last: " + S.fmtW(best.w) + (best.r ? " × " + best.r : "");
-          else if (e.trackMode === "reps" && best.r != null) lastTxt = "Last: " + best.r + " reps";
-          else if (e.trackMode === "time" && best.s != null) lastTxt = "Last: " + S.fmtTime(best.s);
+          if (e.trackMode === "weight" && best.w != null) lastTxt = S.fmtW(best.w) + (best.r ? " × " + best.r : "");
+          else if (e.trackMode === "reps" && best.r != null) lastTxt = best.r + " reps";
+          else if (e.trackMode === "time" && best.s != null) lastTxt = S.fmtTime(best.s);
         }
         var card = h(
           '<button class="excard">' +
@@ -361,9 +419,8 @@
             '<div class="meta">' +
               '<span class="groupdot" style="background:' + g.color + '"></span>' +
               '<span class="tag">' + esc(EQUIP_LABEL[e.equipment] || e.equipment) + "</span>" +
-              (e.level === 1 ? '<span class="tag" style="color:var(--acc)">Beginner</span>' : "") +
             "</div>" +
-            (lastTxt ? '<span class="lastw">' + lastTxt + "</span>" : "") +
+            (lastTxt ? '<span class="lastw">🧠 ' + lastTxt + "</span>" : "") +
           "</button>"
         );
         card.addEventListener("click", function () { openExercise(e.id); });
@@ -381,7 +438,6 @@
 
   /* ================= exercise modal + logger ================= */
   function repUpperBound(setsReps) {
-    // last range in the string is the reps range ("3 sets × 10–12 reps" → 12)
     var m = (setsReps || "").match(/(\d+)\s*[–-]\s*(\d+)/g);
     if (!m || !m.length) return null;
     var last = /(\d+)\s*[–-]\s*(\d+)/.exec(m[m.length - 1]);
@@ -389,7 +445,6 @@
   }
 
   function sparklineSVG(points) {
-    // points: array of numbers (display units)
     if (points.length < 2) return "";
     var w = 300, hh = 70, pad = 6;
     var min = Math.min.apply(null, points), max = Math.max.apply(null, points);
@@ -400,11 +455,18 @@
     });
     var line = xy.map(function (p, i) { return (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1); }).join(" ");
     var area = line + " L" + xy[xy.length - 1][0].toFixed(1) + " " + (hh - 2) + " L" + xy[0][0].toFixed(1) + " " + (hh - 2) + " Z";
-    var dots = xy.map(function (p) { return '<circle cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="3" fill="var(--acc)"/>'; }).join("");
+    var lastDot = '<circle cx="' + xy[xy.length - 1][0].toFixed(1) + '" cy="' + xy[xy.length - 1][1].toFixed(1) + '" r="3.5" fill="var(--accent)"/>';
     return '<svg viewBox="0 0 ' + w + " " + hh + '" preserveAspectRatio="none">' +
-      '<path d="' + area + '" fill="var(--acc-soft)"/>' +
-      '<path d="' + line + '" fill="none" stroke="var(--acc)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>' +
-      dots + "</svg>";
+      '<path d="' + area + '" fill="var(--accent-tint)"/>' +
+      '<path d="' + line + '" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>' +
+      lastDot + "</svg>";
+  }
+
+  function prevCellText(e, pre) {
+    if (!pre) return "—";
+    if (e.trackMode === "weight") return (pre.w != null ? S.fmtW(pre.w, false) : "—") + " × " + (pre.r != null ? pre.r : "—");
+    if (e.trackMode === "reps") return (pre.r != null ? pre.r + " reps" : "—");
+    return pre.s != null ? S.fmtTime(pre.s) : "—";
   }
 
   function openExercise(id) {
@@ -414,38 +476,31 @@
     var last = S.lastEntry(e.id);
     var pr = S.prWeight(e.id);
     var learned = S.isLearned(e.id);
+    var mode = e.trackMode;
+    var s = S.data.settings;
 
-    var lastLine = "";
+    /* last-time banner + overload suggestion */
+    var lastLine;
     if (last) {
       var when = new Date(last.ts).toLocaleDateString("en-US", { month: "short", day: "numeric" });
-      var parts = last.sets.map(function (st) {
-        if (e.trackMode === "weight") return S.fmtW(st.w, false) + "×" + (st.r || "?");
-        if (e.trackMode === "reps") return (st.r || "?") + "";
-        return S.fmtTime(st.s);
-      }).join(", ");
       var sug = "";
-      if (e.trackMode === "weight") {
+      if (mode === "weight") {
         var ub = repUpperBound(e.setsReps);
         var bs = S.bestSet(last);
         if (ub && bs && bs.r >= ub) {
-          var inc = S.data.settings.units === "lb" ? "5 lb" : "2.5 kg";
-          sug = ' <span class="suggest">💡 You hit ' + bs.r + " reps — try +" + inc + " today!</span>";
+          var inc = s.units === "lb" ? "5 lb" : "2.5 kg";
+          sug = ' <span class="suggest">💡 You hit ' + bs.r + " reps — try +" + inc + "</span>";
         }
       }
-      lastLine = '<div class="lastinfo">🧠 Last time (' + when + "): <b>" + parts +
-        (e.trackMode === "weight" ? " " + S.data.settings.units : "") + "</b>" + sug +
-        (pr != null && e.trackMode === "weight" ? ' <span class="pr-flag">🏆 PR ' + S.fmtW(pr) + "</span>" : "") +
-        "</div>";
+      lastLine = '<div class="lastinfo">🧠 Last session <b>' + when + "</b>" + sug +
+        (pr != null && mode === "weight" ? ' <span class="pr-flag">🏆 PR ' + S.fmtW(pr) + "</span>" : "") + "</div>";
     } else {
-      lastLine = '<div class="lastinfo">✨ First time doing this — log your sets below and IronLog will remember the weight for next time.</div>';
+      lastLine = '<div class="lastinfo">✦ First time — log your sets and IronLog remembers the weight for next visit.</div>';
     }
 
-    var mode = e.trackMode;
-    var hint = mode === "weight"
-      ? '<div class="unit-hint"><span></span><span>' + S.data.settings.units + "</span><span>reps</span><span></span></div>"
-      : mode === "reps"
-        ? '<div class="unit-hint"><span></span><span>reps</span><span></span><span></span></div>'
-        : '<div class="unit-hint"><span></span><span>min</span><span>sec</span><span></span></div>';
+    var headCols = mode === "weight" ? ["Set", "Previous", s.units, "Reps", ""] :
+                   mode === "reps"   ? ["Set", "Previous", "Reps", "", ""] :
+                                       ["Set", "Previous", "Min", "Sec", ""];
 
     var back = openModal(
       '<div class="modal-head"><div>' +
@@ -458,67 +513,95 @@
         '<button class="icon-btn" data-close aria-label="Close">✕</button>' +
       "</div>" +
       '<div class="bigfig">' + e.svg + "</div>" +
-      '<div class="small muted"><b style="color:var(--text)">Targets:</b> ' + esc(e.primary.join(", ")) +
-        (e.secondary.length ? ' <span class="muted">(+ ' + esc(e.secondary.join(", ")) + ")</span>" : "") + "</div>" +
+      '<div class="small muted"><b style="color:var(--text-hi)">Targets:</b> ' + esc(e.primary.join(", ")) +
+        (e.secondary.length ? ' <span class="faint">(+ ' + esc(e.secondary.join(", ")) + ")</span>" : "") + "</div>" +
 
-      '<div class="section-title" style="margin-top:16px">How to do it <small>' + esc(e.setsReps) + "</small></div>" +
-      '<ol class="steps">' + e.steps.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ol>" +
+      '<div class="section-title">How to do it <small>' + esc(e.setsReps) + "</small></div>" +
+      '<ol class="steps">' + e.steps.map(function (st) { return "<li>" + esc(st) + "</li>"; }).join("") + "</ol>" +
       '<div class="tipbox"><b>💡 Newbie tips</b><ul>' + e.tips.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul></div>" +
 
       (e.equipment === "barbell" ? plateCalcHTML() : "") +
 
-      '<div class="section-title">Log today\'s sets</div>' +
+      '<div class="section-title">Log today</div>' +
       lastLine +
-      '<div class="logger">' + hint + '<div id="set-rows"></div>' +
-        '<div style="display:flex;gap:8px;margin-top:4px">' +
-          '<button class="btn sm" id="add-set">+ Add set</button>' +
-          '<button class="btn sm" id="start-rest">⏱ Rest timer</button>' +
-          '<button class="btn sm" id="mark-learned">' + (learned ? "✓ Learned" : "☐ Mark learned") + "</button>" +
+      '<div class="logger">' +
+        '<div class="sethead"><span>' + headCols[0] + "</span><span>" + headCols[1] + "</span><span>" + headCols[2] + "</span><span>" + headCols[3] + "</span><span>" + headCols[4] + "</span></div>" +
+        '<div id="set-rows"></div>' +
+        '<button class="addset-row" id="add-set">+ Add set</button>' +
+        '<div class="logger-tools">' +
+          '<button class="btn ghost sm" id="rm-set">− Remove set</button>' +
+          '<button class="btn ghost sm" id="start-rest">⏱ Rest</button>' +
+          '<button class="btn ghost sm" id="mark-learned">' + (learned ? "✓ Learned" : "☐ Mark learned") + "</button>" +
         "</div>" +
-        '<button class="btn primary block" id="save-log" style="margin-top:14px">Save workout</button>' +
+        '<button class="btn primary block" id="save-log" style="margin-top:14px">Finish &amp; save</button>' +
       "</div>" +
       '<div id="ex-history"></div>'
     );
 
     back.querySelector("[data-close]").addEventListener("click", function () { closeModal(back); });
 
-    /* set rows */
+    /* ---- set rows: SET | PREV | inputs | ✓ ---- */
     var rowsEl = back.querySelector("#set-rows");
-    function addRow(pre) {
-      var n = rowsEl.children.length + 1;
-      var row;
-      if (mode === "weight") {
-        var wVal = pre && pre.w != null ? (Math.round(S.fromKg(pre.w) * 2) / 2) : "";
-        row = h('<div class="set-row"><span class="setn">' + n + '</span>' +
-          '<input type="number" step="0.5" min="0" inputmode="decimal" data-f="w" placeholder="weight" value="' + wVal + '">' +
-          '<input type="number" step="1" min="0" inputmode="numeric" data-f="r" placeholder="reps" value="' + (pre && pre.r != null ? pre.r : "") + '">' +
-          '<button class="del" title="Remove set">✕</button></div>');
-      } else if (mode === "reps") {
-        row = h('<div class="set-row"><span class="setn">' + n + '</span>' +
-          '<input type="number" step="1" min="0" inputmode="numeric" data-f="r" placeholder="reps" value="' + (pre && pre.r != null ? pre.r : "") + '">' +
-          "<span></span>" +
-          '<button class="del" title="Remove set">✕</button></div>');
-      } else {
-        var mins = pre && pre.s != null ? Math.floor(pre.s / 60) : "";
-        var secs = pre && pre.s != null ? pre.s % 60 : "";
-        row = h('<div class="set-row timed"><span class="setn">' + n + '</span>' +
-          '<input type="number" step="1" min="0" inputmode="numeric" data-f="m" placeholder="min" value="' + mins + '">' +
-          '<input type="number" step="1" min="0" max="59" inputmode="numeric" data-f="s" placeholder="sec" value="' + secs + '">' +
-          '<button class="del" title="Remove set">✕</button></div>');
-      }
-      row.querySelector(".del").addEventListener("click", function () {
-        row.remove();
-        Array.prototype.forEach.call(rowsEl.children, function (r, i) {
-          r.querySelector(".setn").textContent = i + 1;
+
+    function rowDone(row, done) {
+      row.classList.toggle("done", done);
+    }
+    function completeRow(row) {
+      var idx = Array.prototype.indexOf.call(rowsEl.children, row);
+      var pre = last && last.sets[idx];
+      if (!row.classList.contains("done")) {
+        // silent autofill from previous session if fields are empty
+        row.querySelectorAll("input").forEach(function (inp) {
+          if (inp.value !== "" || !pre) return;
+          var f = inp.dataset.f;
+          if (f === "w" && pre.w != null) inp.value = Math.round(S.fromKg(pre.w) * 2) / 2;
+          if (f === "r" && pre.r != null) inp.value = pre.r;
+          if (f === "m" && pre.s != null) inp.value = Math.floor(pre.s / 60);
+          if (f === "s" && pre.s != null) inp.value = pre.s % 60;
         });
+        rowDone(row, true);
+        if (navigator.vibrate) navigator.vibrate(18);
+        setTimeout(function () { startRest(); }, 120);
+      } else {
+        rowDone(row, false);
+      }
+    }
+
+    function addRow(pre, idx) {
+      var n = rowsEl.children.length + 1;
+      var prevTxt = prevCellText(e, pre);
+      var cells;
+      if (mode === "weight") {
+        cells = '<input type="number" step="0.5" min="0" inputmode="decimal" data-f="w" placeholder="' + (pre && pre.w != null ? Math.round(S.fromKg(pre.w) * 2) / 2 : "—") + '">' +
+                '<input type="number" step="1" min="0" inputmode="numeric" data-f="r" placeholder="' + (pre && pre.r != null ? pre.r : "—") + '">';
+      } else if (mode === "reps") {
+        cells = '<input type="number" step="1" min="0" inputmode="numeric" data-f="r" placeholder="' + (pre && pre.r != null ? pre.r : "—") + '" style="grid-column:3/span 2">';
+      } else {
+        cells = '<input type="number" step="1" min="0" inputmode="numeric" data-f="m" placeholder="min">' +
+                '<input type="number" step="1" min="0" max="59" inputmode="numeric" data-f="s" placeholder="sec">';
+      }
+      var row = h('<div class="set-row"><span class="setn num">' + n + '</span>' +
+        '<span class="prev num">' + esc(prevTxt) + "</span>" + cells +
+        '<button class="ck" title="Complete set (autofills last session)">' + CK_SVG + "</button></div>");
+      row.querySelector(".ck").addEventListener("click", function () { completeRow(row); });
+      row.querySelectorAll("input").forEach(function (inp) {
+        inp.addEventListener("keydown", function (ev) {
+          if (ev.key === "Enter") { ev.preventDefault(); completeRow(row); }
+        });
+        inp.addEventListener("input", function () { rowDone(row, false); });
       });
       rowsEl.appendChild(row);
     }
-    if (last && last.sets.length) last.sets.forEach(function (st) { addRow(st); });
-    else { addRow(); addRow(); addRow(); }
+    var initialRows = last && last.sets.length ? last.sets.length : 3;
+    for (var i = 0; i < initialRows; i++) addRow(last ? last.sets[i] : null, i);
 
-    back.querySelector("#add-set").addEventListener("click", function () { addRow(); });
-    back.querySelector("#start-rest").addEventListener("click", function () { openTimer(); });
+    back.querySelector("#add-set").addEventListener("click", function () {
+      addRow(last ? last.sets[rowsEl.children.length] : null);
+    });
+    back.querySelector("#rm-set").addEventListener("click", function () {
+      if (rowsEl.children.length > 1) rowsEl.lastElementChild.remove();
+    });
+    back.querySelector("#start-rest").addEventListener("click", function () { startRest(); });
     back.querySelector("#mark-learned").addEventListener("click", function () {
       var now = S.toggleLearned(e.id);
       this.textContent = now ? "✓ Learned" : "☐ Mark learned";
@@ -535,9 +618,12 @@
           var num = parseFloat(inp.value);
           return isNaN(num) ? null : num;
         };
+        var isDone = r.classList.contains("done");
         if (mode === "weight") {
           var w = get("w"), rr = get("r");
-          if (w != null || rr != null) sets.push({ w: w != null ? S.toKg(w) : null, r: rr });
+          if (isDone || w != null || rr != null) {
+            if (w != null || rr != null) sets.push({ w: w != null ? S.toKg(w) : null, r: rr });
+          }
         } else if (mode === "reps") {
           var r2 = get("r");
           if (r2 != null) sets.push({ r: r2 });
@@ -546,27 +632,27 @@
           if (m || sc) sets.push({ s: Math.round(m * 60 + sc) });
         }
       });
-      if (!sets.length) { toast("Add at least one set first 🙂"); return; }
+      if (!sets.length) { toast("Complete or fill at least one set 🙂"); return; }
 
       var oldPr = S.prWeight(e.id);
       S.addLog(e.id, sets);
       var newPr = S.prWeight(e.id);
 
+      stopRest();
       if (mode === "weight" && newPr != null && (oldPr == null || newPr > oldPr) && S.logsFor(e.id).length > 1) {
-        toast("🏆 NEW PR on " + esc(e.name) + ": " + S.fmtW(newPr) + "!", "pr", 3400);
+        toast("🏆 NEW PR — " + esc(e.name) + ": " + S.fmtW(newPr) + "!", "pr", 3400);
         confetti();
       } else {
-        toast("Workout saved 💾 — IronLog will remember " + (mode === "weight" ? "these weights" : "this") + " next time.");
+        toast("Saved 💾 — weights remembered for next time.");
       }
       checkGoalCompletion();
       closeModal(back);
       render();
     });
 
-    /* plate calculator */
     if (e.equipment === "barbell") bindPlateCalc(back);
 
-    /* history */
+    /* history + chart */
     var histEl = back.querySelector("#ex-history");
     var logs = S.logsFor(e.id);
     if (logs.length) {
@@ -578,7 +664,7 @@
       }).filter(function (x) { return x != null; });
       var histHTML = '<div class="section-title">Your progress <small>' + logs.length + " session" + (logs.length > 1 ? "s" : "") + "</small></div>";
       if (vals.length >= 2) histHTML += '<div class="card spark-wrap">' + sparklineSVG(vals) +
-        '<div class="goal-meta" style="margin-top:6px"><span>' + (mode === "weight" ? "best set weight" : mode === "reps" ? "best set reps" : "minutes") + " over time</span><span>latest: <b style='color:var(--acc)'>" +
+        '<div class="goal-meta" style="margin-top:6px"><span>' + (mode === "weight" ? "best set weight" : mode === "reps" ? "best set reps" : "minutes") + "</span><span>latest: <b style='color:var(--accent-text)'>" +
         (mode === "weight" ? S.fmtW(S.toKg(vals[vals.length - 1])) : mode === "time" ? Math.round(vals[vals.length - 1]) + " min" : vals[vals.length - 1] + " reps") + "</b></span></div></div>";
       histHTML += '<div class="card" id="hist-list"></div>';
       histEl.innerHTML = histHTML;
@@ -587,7 +673,7 @@
         var item = h('<div class="daylog-item"><div style="flex:1"><b class="small">' +
           new Date(l.ts).toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" }) + "</b>" +
           '<div class="sets">' + setsSummary(e, l) + "</div></div>" +
-          '<button class="del btn ghost sm" title="Delete entry" style="color:var(--muted)">🗑</button></div>');
+          '<button class="del btn ghost sm" title="Delete entry">🗑</button></div>');
         item.querySelector(".del").addEventListener("click", function () {
           if (window.confirm("Delete this logged session?")) {
             S.deleteLog(l.id);
@@ -609,11 +695,11 @@
   }
 
   function plateCalcHTML() {
-    return '<details class="acc-box"><summary>🧮 Plate calculator <span class="muted small">tap to open</span></summary>' +
-      '<div class="inner"><div class="small muted" style="margin-bottom:8px">Enter your target total weight — see which plates to load per side (' +
+    return '<details class="acc-box" style="margin-top:12px"><summary>🧮 Plate calculator <span class="muted small">tap to open</span></summary>' +
+      '<div class="inner"><div class="small muted" style="margin-bottom:8px">Target total weight → plates per side (' +
       (S.data.settings.units === "lb" ? "45 lb bar" : "20 kg bar") + ").</div>" +
       '<input type="number" step="0.5" inputmode="decimal" id="plate-in" placeholder="Target total (' + S.data.settings.units + ')">' +
-      '<div id="plate-out" class="small" style="margin-top:9px;font-weight:600"></div></div></details>';
+      '<div id="plate-out" class="small num" style="margin-top:9px;font-weight:600"></div></div></details>';
   }
   function bindPlateCalc(root) {
     var inp = root.querySelector("#plate-in"), out = root.querySelector("#plate-out");
@@ -624,19 +710,20 @@
       var plates = lb ? [45, 35, 25, 10, 5, 2.5] : [25, 20, 15, 10, 5, 2.5, 1.25];
       var total = parseFloat(inp.value);
       if (isNaN(total) || total <= 0) { out.textContent = ""; return; }
-      if (total < bar) { out.textContent = "That's lighter than the empty bar (" + bar + " " + S.data.settings.units + ") — start with just the bar!"; return; }
+      if (total < bar) { out.textContent = "Lighter than the empty bar (" + bar + " " + S.data.settings.units + ") — start with just the bar!"; return; }
       var side = (total - bar) / 2, rem = side, used = [];
       plates.forEach(function (p) {
         var n = Math.floor(rem / p + 1e-9);
         if (n > 0) { used.push(n + "×" + p); rem = +(rem - n * p).toFixed(3); }
       });
-      out.innerHTML = "Per side: <span style='color:var(--acc)'>" + (used.length ? used.join(" + ") : "empty bar") + "</span>" +
-        (rem > 0.01 ? " <span class='muted'>(" + rem.toFixed(2) + " " + S.data.settings.units + " unmatchable)</span>" : "");
+      out.innerHTML = "Per side: <span style='color:var(--accent-text)'>" + (used.length ? used.join(" + ") : "empty bar") + "</span>" +
+        (rem > 0.01 ? " <span class='muted'>(" + rem.toFixed(2) + " unmatchable)</span>" : "");
     });
   }
 
   /* ================= HISTORY ================= */
   function renderHistory(v) {
+    v.appendChild(h('<div class="page-title">History</div>'));
     var now = state.month ? new Date(state.month) : new Date();
     now.setDate(1);
     state.month = now.toISOString();
@@ -690,7 +777,6 @@
     });
     v.appendChild(cal);
 
-    // selected-day details
     var sel = byDate[state.selDate] || [];
     var selDate = new Date(state.selDate + "T12:00:00");
     v.appendChild(h('<div class="section-title">' + selDate.toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric" }) +
@@ -703,27 +789,26 @@
       v.appendChild(h('<div class="empty"><div class="big">😴</div>No workout logged this day.</div>'));
     }
 
-    // weekly volume
     var weeks = S.weeklyVolume(6);
     var maxVol = Math.max.apply(null, weeks.map(function (w) { return w.vol; }).concat([1]));
     if (maxVol > 1) {
-      v.appendChild(h('<div class="section-title">Weekly volume <small>' + (S.data.settings.units === "lb" ? "lb" : "kg") + " lifted</small></div>"));
+      v.appendChild(h('<div class="section-title">Weekly volume <small>' + S.data.settings.units + " lifted</small></div>"));
       var bars = h('<div class="card"><div class="bars"></div></div>');
       var barsEl = bars.querySelector(".bars");
       weeks.forEach(function (w) {
         var v2 = S.data.settings.units === "lb" ? S.fromKg(w.vol) : w.vol;
-        barsEl.appendChild(h('<div class="bar"><i style="height:' + Math.max(3, (w.vol / maxVol) * 78) + 'px"></i><span>' + w.label + "</span></div>"));
-        barsEl.lastChild.title = fmtInt(v2) + " " + S.data.settings.units;
+        var bar = h('<div class="bar"><i style="height:' + Math.max(3, (w.vol / maxVol) * 78) + 'px"></i><span>' + w.label + "</span></div>");
+        bar.title = fmtInt(v2) + " " + S.data.settings.units;
+        barsEl.appendChild(bar);
       });
       v.appendChild(bars);
     }
 
-    // totals
     var totalV = S.data.settings.units === "lb" ? S.fromKg(S.totalVolumeKg()) : S.totalVolumeKg();
-    v.appendChild(h('<div class="statgrid" style="grid-template-columns:1fr 1fr 1fr">' +
-      '<div class="stat"><b>' + S.workoutDates().length + "</b><span>gym days</span></div>" +
-      '<div class="stat"><b>' + S.data.logs.length + "</b><span>exercises logged</span></div>" +
-      '<div class="stat"><b>' + fmtInt(totalV) + "</b><span>" + S.data.settings.units + " lifted</span></div>" +
+    v.appendChild(h('<div class="bento" style="margin-top:12px">' +
+      '<div class="tile"><div class="eyebrow">Gym days</div><div class="tnum num">' + S.workoutDates().length + "</div></div>" +
+      '<div class="tile"><div class="eyebrow">Exercises logged</div><div class="tnum num">' + S.data.logs.length + "</div></div>" +
+      '<div class="tile span2"><div class="eyebrow">Lifetime volume</div><div class="tnum num">' + fmtInt(totalV) + "<small>" + S.data.settings.units + "</small></div></div>" +
     "</div>"));
 
     v.querySelectorAll(".daylog-item .thumb").forEach(watchFig);
@@ -736,7 +821,7 @@
       (e ? '<div class="thumb">' + e.svg + "</div>" : "") +
       '<div style="flex:1;min-width:0"><b class="small">' + esc(name) + "</b>" +
       '<div class="sets">' + (e ? setsSummary(e, l) : "") + "</div></div>" +
-      (withDelete ? '<button class="del btn ghost sm" style="color:var(--muted)" title="Delete">🗑</button>' : "") +
+      (withDelete ? '<button class="del btn ghost sm" title="Delete">🗑</button>' : "") +
       "</div>");
     if (e) {
       item.style.cursor = "pointer";
@@ -755,7 +840,6 @@
 
   /* ================= GOALS ================= */
   function goalProgress(g) {
-    // returns {cur, target, pct, label}
     if (g.type === "weight") {
       var pr = S.prWeight(g.exerciseId) || 0;
       return { cur: pr, target: g.target, pct: Math.min(1, pr / g.target), label: S.fmtW(pr) + " / " + S.fmtW(g.target) };
@@ -787,14 +871,14 @@
   }
 
   function renderGoals(v) {
-    var head = h('<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">' +
-      "<h1 style='font-size:21px;font-weight:800'>Goals 🎯</h1>" +
-      '<button class="btn primary sm" id="add-goal">+ New goal</button></div>');
+    var head = h('<div style="display:flex;justify-content:space-between;align-items:center;margin:4px 0 16px">' +
+      '<div class="page-title" style="margin:0">Goals</div>' +
+      '<button class="btn primary sm" id="add-goal" style="min-height:38px">+ New goal</button></div>');
     head.querySelector("#add-goal").addEventListener("click", openGoalForm);
     v.appendChild(head);
 
     if (!S.data.goals.length) {
-      var emptyBox = h('<div class="empty card"><div class="big">🎯</div>No goals yet.<br><span class="small">Try “Bench press 40 kg”, “3 workouts a week”, or “Learn 15 exercises”.</span><br><br><button class="btn primary" id="add-goal2">Set your first goal</button></div>');
+      var emptyBox = h('<div class="empty card"><div class="big">🎯</div>No goals yet.<br><span class="small">Try "Bench press 40 kg", "3 workouts a week", or "Learn 15 exercises".</span><br><br><button class="btn primary" id="add-goal2">Set your first goal</button></div>');
       emptyBox.querySelector("#add-goal2").addEventListener("click", openGoalForm);
       v.appendChild(emptyBox);
       return;
@@ -805,7 +889,7 @@
         var p = goalProgress(g);
         var card = h('<div class="card goal-card' + (g.done ? " goal-done" : "") + '">' +
           '<div class="goal-top"><h4>' + (g.done ? "🏆 " : "") + esc(g.title) + "</h4>" +
-          '<button class="btn ghost sm" style="color:var(--muted)" title="Delete goal">🗑</button></div>' +
+          '<button class="btn ghost sm" title="Delete goal">🗑</button></div>' +
           '<div class="progress"><i style="width:' + Math.round(p.pct * 100) + '%"></i></div>' +
           '<div class="goal-meta"><span>' + esc(p.label) + "</span><span>" + Math.round(p.pct * 100) + "%</span></div>" +
           (g.type === "custom" && !g.done ? '<button class="btn sm" data-inc style="align-self:flex-start">+1 progress</button>' : "") +
@@ -890,9 +974,10 @@
   /* ================= SETTINGS ================= */
   function renderSettings(v) {
     var s = S.data.settings;
+    v.appendChild(h('<div class="page-title">Settings</div>'));
     var card = h(
       '<div class="card">' +
-        '<div class="setting-row"><div><div class="lbl">Your name</div><div class="desc">Used for the home-screen greeting</div></div>' +
+        '<div class="setting-row"><div><div class="lbl">Your name</div><div class="desc">Used in the greeting</div></div>' +
           '<input type="text" id="set-name" style="width:150px" placeholder="Optional" value="' + esc(s.name) + '"></div>' +
         '<div class="setting-row"><div><div class="lbl">Home gym</div><div class="desc">Shown on your home screen</div></div>' +
           '<input type="text" id="set-gym" style="width:150px" placeholder="e.g. VASA Lafayette" value="' + esc(s.gymName) + '"></div>' +
@@ -906,7 +991,6 @@
           '<select id="set-rest"><option>60</option><option>90</option><option>120</option><option>180</option></select></div>' +
       "</div>"
     );
-    v.appendChild(h("<h1 style='font-size:21px;font-weight:800;margin-bottom:14px'>Settings ⚙️</h1>"));
     v.appendChild(card);
 
     card.querySelector("#set-name").addEventListener("change", function () { s.name = this.value.trim(); S.save(); });
@@ -934,7 +1018,7 @@
     v.appendChild(h('<div class="section-title">Backup &amp; restore</div>'));
     var bk = h(
       '<div class="card">' +
-        '<p class="small muted" style="margin:0 0 12px">All your data lives in this browser\'s storage. Export a JSON backup regularly — keep it in your files or upload it to Google Drive. Restore it here on any device.</p>' +
+        '<p class="small muted" style="margin:0 0 12px">All data lives in this browser\'s storage. Export a JSON backup regularly — keep it in your files or Google Drive. Restore it on any device.</p>' +
         '<div style="display:flex;gap:9px;flex-wrap:wrap">' +
           '<button class="btn primary" id="bk-export">⬇ Export JSON</button>' +
           '<button class="btn" id="bk-import">⬆ Import JSON</button>' +
@@ -945,7 +1029,7 @@
     v.appendChild(bk);
     bk.querySelector("#bk-export").addEventListener("click", function () {
       S.exportJSON();
-      toast("Backup downloaded 📦 — store it somewhere safe (e.g. Google Drive).");
+      toast("Backup downloaded 📦 — store it somewhere safe.");
     });
     var fileInp = bk.querySelector("#bk-file");
     bk.querySelector("#bk-import").addEventListener("click", function () { fileInp.click(); });
@@ -977,21 +1061,20 @@
       this.value = "";
     });
 
-    /* about / help */
+    /* about */
     v.appendChild(h('<div class="section-title">About</div>'));
     var used = 0;
     try { used = (localStorage.getItem("gymlog.v1") || "").length; } catch (e) {}
     v.appendChild(h(
       '<details class="acc-box"><summary>📖 How IronLog works</summary><div class="inner small muted">' +
-        "<p><b>Learn:</b> the Home tab features one new exercise every day, with an animated demo. Mark it learned to grow your toolbox.</p>" +
-        "<p><b>Log:</b> open any exercise, enter your sets, save. Next time, your last weights are pre-filled — no more guessing which pin you used.</p>" +
-        "<p><b>Progress:</b> PRs trigger automatically, the History tab shows your training calendar, and Goals track lifts, frequency, and learning.</p>" +
-        "<p><b>Privacy:</b> zero accounts, zero servers. Data stays in your browser (" + (used / 1024).toFixed(1) + " KB used). Export JSON backups from above.</p>" +
+        "<p><b>Learn:</b> Home features one new exercise daily with an animated demo. Mark it learned to grow your toolbox.</p>" +
+        "<p><b>Log:</b> open any exercise, tap ✓ on a set to accept last session's numbers (or type new ones), save. Next time your weights are pre-filled.</p>" +
+        "<p><b>Progress:</b> PRs fire automatically, History shows your training calendar, Goals track lifts, frequency, and learning.</p>" +
+        "<p><b>Privacy:</b> no accounts, no servers. Data stays in your browser (" + (used / 1024).toFixed(1) + " KB used). Export JSON backups above.</p>" +
       "</div></details>"
     ));
-    v.appendChild(h('<div class="card small muted" style="text-align:center">IronLog · ' + EX.length + " exercises loaded · works offline once visited</div>"));
+    v.appendChild(h('<div class="card small muted" style="text-align:center">IRONLOG · ' + EX.length + " exercises · works offline once visited</div>"));
 
-    /* danger */
     var dz = h('<button class="btn danger block" style="margin-top:6px">⚠ Erase all data</button>');
     dz.addEventListener("click", function () {
       if (window.confirm("Erase ALL IronLog data on this device? Export a backup first if you care about it.")) {
@@ -1003,8 +1086,8 @@
     v.appendChild(dz);
   }
 
-  /* ================= rest timer ================= */
-  var timer = { total: 90, left: 90, iv: null, sheet: null };
+  /* ================= rest timer (sticky pill) ================= */
+  var rest = { left: 0, total: 0, iv: null, el: null };
 
   function beep() {
     try {
@@ -1023,69 +1106,60 @@
     if (navigator.vibrate) navigator.vibrate([180, 90, 180]);
   }
 
-  function openTimer() {
-    if (timer.sheet) return;
-    timer.total = timer.left = S.data.settings.restSec || 90;
-    var R = 84, C = 2 * Math.PI * R;
-    var back = h(
-      '<div class="sheet-back"><div class="sheet">' +
-        '<div class="grab" style="width:42px;height:4.5px;border-radius:4px;background:var(--border);margin:2px auto 10px"></div>' +
-        "<h3>Rest timer</h3>" +
-        '<div class="timer-ring"><svg width="190" height="190" viewBox="0 0 190 190">' +
-          '<circle cx="95" cy="95" r="' + R + '" fill="none" stroke="var(--card-2)" stroke-width="10"/>' +
-          '<circle id="t-ring" cx="95" cy="95" r="' + R + '" fill="none" stroke="var(--acc)" stroke-width="10" stroke-linecap="round" stroke-dasharray="' + C + '" stroke-dashoffset="0"/>' +
-        "</svg>" +
-        '<div class="timer-num" id="t-num"></div></div>' +
-        '<div class="timer-presets">' +
-          '<button class="btn sm" data-t="60">1:00</button>' +
-          '<button class="btn sm" data-t="90">1:30</button>' +
-          '<button class="btn sm" data-t="120">2:00</button>' +
-          '<button class="btn sm" data-t="180">3:00</button>' +
-        "</div>" +
-        '<div class="timer-actions">' +
-          '<button class="btn" id="t-plus">+15s</button>' +
-          '<button class="btn primary" id="t-toggle" style="min-width:110px">Pause</button>' +
-          '<button class="btn" id="t-close">Done</button>' +
-        "</div>" +
-      "</div></div>"
-    );
-    document.getElementById("sheet-root").appendChild(back);
-    timer.sheet = back;
+  function restPaint() {
+    if (!rest.el) return;
+    rest.el.querySelector(".rest-num").textContent = S.fmtTime(rest.left);
+    rest.el.querySelector(".rest-track i").style.width = (rest.total ? (rest.left / rest.total) * 100 : 0) + "%";
+  }
 
-    var ringEl = back.querySelector("#t-ring"), numEl = back.querySelector("#t-num");
-    function paint() {
-      numEl.textContent = S.fmtTime(timer.left);
-      ringEl.style.strokeDashoffset = C * (1 - timer.left / Math.max(1, timer.total));
-      ringEl.style.stroke = timer.left <= 5 ? "var(--warn)" : "var(--acc)";
-    }
-    function tick() {
-      timer.left--;
-      if (timer.left <= 0) {
-        timer.left = 0; paint(); stop();
-        beep();
-        numEl.textContent = "GO!";
-        toast("⏱ Rest over — next set! 💪");
-        return;
-      }
-      paint();
-    }
-    function start() { if (!timer.iv) timer.iv = setInterval(tick, 1000); back.querySelector("#t-toggle").textContent = "Pause"; }
-    function stop() { clearInterval(timer.iv); timer.iv = null; back.querySelector("#t-toggle").textContent = "Start"; }
-
-    back.querySelectorAll("[data-t]").forEach(function (b) {
-      b.addEventListener("click", function () {
-        timer.total = timer.left = parseInt(b.dataset.t, 10);
-        paint(); start();
+  function startRest(sec) {
+    var dur = sec || S.data.settings.restSec || 90;
+    if (!rest.el) {
+      rest.el = h(
+        '<div class="restpill">' +
+          '<div class="rest-top">' +
+            '<span class="eyebrow">Rest</span>' +
+            '<span class="rest-num num">0:00</span>' +
+            '<div class="rest-btns">' +
+              '<button class="btn sm" data-r="-15">−15</button>' +
+              '<button class="btn sm" data-r="15">+15</button>' +
+              '<button class="btn sm" data-skip>Skip</button>' +
+            "</div>" +
+          "</div>" +
+          '<div class="rest-track"><i style="width:100%"></i></div>' +
+        "</div>"
+      );
+      rest.el.querySelectorAll("[data-r]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          rest.left = Math.max(1, rest.left + parseInt(b.dataset.r, 10));
+          rest.total = Math.max(rest.total, rest.left);
+          restPaint();
+        });
       });
-    });
-    back.querySelector("#t-plus").addEventListener("click", function () { timer.left += 15; timer.total = Math.max(timer.total, timer.left); paint(); });
-    back.querySelector("#t-toggle").addEventListener("click", function () { timer.iv ? stop() : start(); });
-    function close() { stop(); back.remove(); timer.sheet = null; }
-    back.querySelector("#t-close").addEventListener("click", close);
-    back.addEventListener("click", function (e) { if (e.target === back) close(); });
-
-    paint();
-    start();
+      rest.el.querySelector("[data-skip]").addEventListener("click", stopRest);
+      document.getElementById("restpill-root").appendChild(rest.el);
+    }
+    rest.total = rest.left = dur;
+    restPaint();
+    if (!rest.iv) {
+      rest.iv = setInterval(function () {
+        rest.left--;
+        if (rest.left <= 0) {
+          rest.left = 0;
+          restPaint();
+          rest.el.querySelector(".rest-num").textContent = "GO!";
+          beep();
+          clearInterval(rest.iv); rest.iv = null;
+          setTimeout(stopRest, 1400);
+          return;
+        }
+        restPaint();
+      }, 1000);
+    }
+  }
+  function stopRest() {
+    if (rest.iv) { clearInterval(rest.iv); rest.iv = null; }
+    if (rest.el) { rest.el.remove(); rest.el = null; }
   }
 
   /* ================= boot ================= */
