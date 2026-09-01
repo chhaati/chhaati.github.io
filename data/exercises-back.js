@@ -637,3 +637,153 @@ window.GYM_EXERCISES.push(
 </svg>`
   }
 );
+
+window.GYM_EXERCISES.push(
+  {
+    id: "back-iso-lateral-front-lat-pulldown",
+    name: "Iso-Lateral Front Lat Pulldown",
+    group: "back",
+    equipment: "machine",
+    level: 1,
+    primary: ["Lats"],
+    secondary: ["Biceps", "Mid-back"],
+    steps: [
+      "Slide the same plates onto both lever arms — one small plate per side is plenty for a first session.",
+      "Adjust the seat so the thigh pads press snugly on your legs and the overhead handles are just within reach.",
+      "Sit tall, grab the handles, and let your arms stretch all the way up so you feel your lats lengthen.",
+      "Exhale and pull the handles down to your upper chest, driving your elbows down and slightly back.",
+      "Pause with your chest up, then inhale and let the levers rise slowly until your arms are straight again."
+    ],
+    tips: [
+      "Each handle rides its own lever, so your strong side can't cover for the weak one — you can even do one arm at a time.",
+      "There's no weight stack to catch the plates — control the top of every rep instead of letting the levers crash back up.",
+      "Pull with your elbows, not your hands; if your biceps tire first, you're yanking with your arms instead of your lats.",
+      "Keep your chest lifted and lean back only slightly — hunching forward over the machine robs your lats of the work."
+    ],
+    setsReps: "3 sets × 10–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="146" y1="126" x2="146" y2="30"/>
+<line x1="88" y1="96" x2="124" y2="96"/>
+<line x1="106" y1="96" x2="106" y2="126"/>
+<line x1="108" y1="82" x2="126" y2="82"/>
+<g stroke-width="3">
+<animateTransform attributeName="transform" type="rotate" values="0 146 30;-55 146 30;0 146 30" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<line x1="146" y1="30" x2="106" y2="24"/>
+<line x1="146" y1="30" x2="172" y2="44"/>
+<circle cx="174" cy="46" r="8"/>
+<circle cx="167" cy="42" r="5"/>
+</g>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="95" cy="48" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M96 58 L100 90 L122 92 L120 124"/>
+<path stroke="var(--acc,#a3e635)" d="M97 60 L101 42 L106 24">
+<animate attributeName="d" values="M97 60 L101 42 L106 24;M97 60 L102 70 L118 59;M97 60 L101 42 L106 24" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "back-iso-lateral-high-row",
+    name: "Iso-Lateral High Row",
+    group: "back",
+    equipment: "machine",
+    level: 1,
+    primary: ["Lats", "Mid-back"],
+    secondary: ["Biceps", "Rear delts"],
+    steps: [
+      "Load matching plates on both sides, then set the seat height so your chest meets the pad and the handles sit up ahead of you.",
+      "Sit down, lean your chest firmly into the pad, and reach up-and-forward to grab the handles.",
+      "Exhale and pull the handles down and back toward the sides of your ribs, driving your elbows behind you.",
+      "Squeeze your shoulder blades down and together for a second.",
+      "Inhale and let your arms stretch fully up and forward — that long stretch is what makes this machine special."
+    ],
+    tips: [
+      "Keep your chest glued to the pad for the whole rep — pushing yourself back off it means the plates are too heavy.",
+      "Think 'elbows to your back pockets': the down-AND-back arc is what hits the upper lats, not a straight pulldown.",
+      "Let the weight pull you into a full stretch at the top instead of cutting the rep short.",
+      "Row one arm at a time to fix side-to-side imbalances — brace your free hand on the frame."
+    ],
+    setsReps: "3 sets × 10–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="36" y1="126" x2="36" y2="30"/>
+<circle cx="22" cy="116" r="9"/>
+<circle cx="33" cy="119" r="6"/>
+<line x1="96" y1="100" x2="128" y2="100"/>
+<line x1="112" y1="100" x2="112" y2="126"/>
+<line x1="88" y1="50" x2="94" y2="86"/>
+<line x1="91" y1="86" x2="88" y2="126"/>
+<line x1="36" y1="30" x2="64" y2="40" stroke-width="3">
+<animate attributeName="x2" values="64;86;64" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="40;66;40" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="94" cy="40" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M96 50 L104 92 L94 100 L96 124"/>
+<path stroke="var(--acc,#a3e635)" d="M96 54 L80 47 L64 40">
+<animate attributeName="d" values="M96 54 L80 47 L64 40;M96 54 L102 74 L86 66;M96 54 L80 47 L64 40" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "back-t-bar-row",
+    name: "T-Bar Row",
+    group: "back",
+    equipment: "machine",
+    level: 2,
+    primary: ["Mid-back", "Lats"],
+    secondary: ["Lower back", "Biceps", "Rear delts"],
+    steps: [
+      "Wedge one end of the bar into the landmine pivot and load plates on the free end — smaller 25 lb plates let you pull deeper than big 45s.",
+      "Straddle the bar, hook the V-handle underneath it just behind the plates, and stand with your feet planted on the platform.",
+      "Push your hips back and hinge to about 45 degrees — chest up, back flat, arms hanging straight.",
+      "Exhale and row the plates up to your chest, driving your elbows back along your ribs.",
+      "Inhale and lower under control until your arms are straight, holding the hinge — don't stand up between reps."
+    ],
+    tips: [
+      "Rounding your lower back is the big mistake here — brace your core and keep your chest proud; when your back starts rounding, the set is over.",
+      "Don't yank with your biceps or heave your torso upright — the weight moves because your elbows drive back.",
+      "Keep your knees softly bent and your weight over mid-foot so the plates don't tip you forward.",
+      "If your gym has a T-bar machine with a chest pad, that version supports your lower back and is friendlier for your first sessions."
+    ],
+    setsReps: "3 sets × 8–10 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="20" y1="126" x2="28" y2="114"/>
+<line x1="36" y1="126" x2="28" y2="114"/>
+<line x1="106" y1="124" x2="148" y2="124"/>
+<line x1="28" y1="116" x2="118" y2="102" stroke-width="3">
+<animate attributeName="x2" values="118;114;118" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="102;82;102" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<circle cx="114" cy="100" r="9">
+<animate attributeName="cx" values="114;110;114" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="cy" values="100;80;100" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</circle>
+<circle cx="121" cy="99" r="6">
+<animate attributeName="cx" values="121;117;121" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="cy" values="99;79;99" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</circle>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="85" cy="50" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<line x1="94" y1="58" x2="126" y2="80"/>
+<path d="M126 80 L133 102 L127 122"/>
+<path d="M126 80 L128 102 L119 122"/>
+<path stroke="var(--acc,#a3e635)" d="M96 62 L100 84 L104 105">
+<animate attributeName="d" values="M96 62 L100 84 L104 105;M96 62 L107 76 L101 88;M96 62 L100 84 L104 105" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  }
+);
