@@ -177,6 +177,9 @@
     pool = pool.slice().sort(function (a, b) { return a.id < b.id ? -1 : 1; });
     return pool[hashStr(S.today()) % pool.length];
   }
+  /* beginner weekly split, indexed by Date.getDay() (Sun..Sat) */
+  var DAY_PLAN = ["cardio", "chest", "back", "legs", "shoulders", "arms", "core"];
+
   function suggestedGroup() {
     var lastByGroup = {};
     S.data.logs.forEach(function (l) {
@@ -184,12 +187,18 @@
       if (!ex) return;
       if (!lastByGroup[ex.group] || l.date > lastByGroup[ex.group]) lastByGroup[ex.group] = l.date;
     });
-    var candidates = GROUPS.filter(function (g) { return g.id !== "cardio" && g.id !== "core"; });
-    candidates.sort(function (a, b) {
-      var da = lastByGroup[a.id] || "0000", db = lastByGroup[b.id] || "0000";
-      return da < db ? -1 : da > db ? 1 : 0;
-    });
-    return candidates[0];
+    var todayIdx = new Date().getDay();
+    var today = S.today();
+    var y = new Date(); y.setDate(y.getDate() - 1);
+    var yesterday = S.dstr(y);
+    // walk the weekly plan starting today; suggest the first group
+    // not already trained today or yesterday
+    for (var i = 0; i < 7; i++) {
+      var gid = DAY_PLAN[(todayIdx + i) % 7];
+      var lt = lastByGroup[gid];
+      if (!lt || (lt !== today && lt !== yesterday)) return groupMeta(gid);
+    }
+    return groupMeta(DAY_PLAN[todayIdx]);
   }
 
   /* ================= HOME ================= */
