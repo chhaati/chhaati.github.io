@@ -1,4 +1,6 @@
-# IronLog 🏋️ — your pocket gym coach
+# chhaati 🏋️ — your pocket gym coach
+
+> **chhaati** (छाती) = *chest*. Live at [chhaati.github.io](https://chhaati.github.io/)
 
 A beginner-friendly gym tracker that runs entirely in the browser. No accounts, no servers,
 no build step — perfect for GitHub Pages.
@@ -36,7 +38,7 @@ Then open http://localhost:8123
    ```bash
    git init
    git add .
-   git commit -m "IronLog gym app"
+   git commit -m "chhaati gym app"
    git branch -M main
    git remote add origin https://github.com/<you>/<repo>.git
    git push -u origin main

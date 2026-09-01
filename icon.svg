@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <rect width="128" height="128" rx="28" fill="#0b0f14"/>
-  <g stroke="#a3e635" stroke-width="9" stroke-linecap="round" fill="none">
-    <path d="M38 40v48M90 40v48M22 52v24M106 52v24M38 64h52"/>
-  </g>
+  <rect width="128" height="128" rx="28" fill="#0b0b0f"/>
+  <!-- minimal pecs: chhaati = chest -->
+  <path fill="#a3e635" d="M34 40 H58 Q62 40 62 44 V72 Q62 84 50 84 H44 Q26 84 26 62 V48 Q26 40 34 40 Z"/>
+  <path fill="#a3e635" d="M94 40 H70 Q66 40 66 44 V72 Q66 84 78 84 H84 Q102 84 102 62 V48 Q102 40 94 40 Z"/>
 </svg>

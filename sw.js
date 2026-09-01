@@ -1,5 +1,5 @@
-/* IronLog service worker — cache-first for same-origin, so the app works offline at the gym. */
-var CACHE = "ironlog-v1";
+/* chhaati service worker — so the app works offline at the gym. */
+var CACHE = "chhaati-v1";
 
 self.addEventListener("install", function (e) {
   e.waitUntil(

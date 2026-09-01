@@ -1,12 +1,12 @@
 {
-  "name": "IronLog — pocket gym coach",
-  "short_name": "IronLog",
-  "description": "Beginner-friendly gym tracker: learn exercises with animated demos, remember your machine weights, hit your goals.",
+  "name": "chhaati — pocket gym coach",
+  "short_name": "chhaati",
+  "description": "chhaati (छाती = chest): beginner-friendly gym tracker with animated exercise demos, weight memory per machine, and goals.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#0b0f14",
-  "theme_color": "#0b0f14",
+  "background_color": "#0b0b0f",
+  "theme_color": "#0b0b0f",
   "icons": [
     { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ]

@@ -1,4 +1,4 @@
-/* IronLog — main app ("Volt Forge" UI) */
+/* chhaati — main app ("Volt Forge" UI) */
 (function () {
   "use strict";
 
@@ -296,8 +296,8 @@
     if (!S.data.logs.length && !S.data.learned.length) {
       v.appendChild(h(
         '<div class="card">' +
-          "<h3 style='font-size:15.5px;font-weight:700'>Welcome to IronLog 🎉</h3>" +
-          '<p class="small muted" style="margin:8px 0 0">Built for gym newbies. Learn one exercise a day, log the weight you use on each machine, and IronLog remembers it for next time — everything stays <b>on this device</b> (backup anytime from Settings ⚙).</p>' +
+          "<h3 style='font-size:15.5px;font-weight:700'>Welcome to chhaati 🎉</h3>" +
+          '<p class="small muted" style="margin:8px 0 0"><b>chhaati</b> (छाती) means <b>chest</b> — built for gym newbies. Learn one exercise a day, log the weight you use on each machine, and chhaati remembers it for next time — everything stays <b>on this device</b> (backup anytime from Settings ⚙).</p>' +
         "</div>"
       ));
     }
@@ -495,7 +495,7 @@
       lastLine = '<div class="lastinfo">🧠 Last session <b>' + when + "</b>" + sug +
         (pr != null && mode === "weight" ? ' <span class="pr-flag">🏆 PR ' + S.fmtW(pr) + "</span>" : "") + "</div>";
     } else {
-      lastLine = '<div class="lastinfo">✦ First time — log your sets and IronLog remembers the weight for next visit.</div>';
+      lastLine = '<div class="lastinfo">✦ First time — log your sets and chhaati remembers the weight for next visit.</div>';
     }
 
     var headCols = mode === "weight" ? ["Set", "Previous", s.units, "Reps", ""] :
@@ -1066,18 +1066,18 @@
     var used = 0;
     try { used = (localStorage.getItem("gymlog.v1") || "").length; } catch (e) {}
     v.appendChild(h(
-      '<details class="acc-box"><summary>📖 How IronLog works</summary><div class="inner small muted">' +
+      '<details class="acc-box"><summary>📖 How chhaati works</summary><div class="inner small muted">' +
         "<p><b>Learn:</b> Home features one new exercise daily with an animated demo. Mark it learned to grow your toolbox.</p>" +
         "<p><b>Log:</b> open any exercise, tap ✓ on a set to accept last session's numbers (or type new ones), save. Next time your weights are pre-filled.</p>" +
         "<p><b>Progress:</b> PRs fire automatically, History shows your training calendar, Goals track lifts, frequency, and learning.</p>" +
         "<p><b>Privacy:</b> no accounts, no servers. Data stays in your browser (" + (used / 1024).toFixed(1) + " KB used). Export JSON backups above.</p>" +
       "</div></details>"
     ));
-    v.appendChild(h('<div class="card small muted" style="text-align:center">IRONLOG · ' + EX.length + " exercises · works offline once visited</div>"));
+    v.appendChild(h('<div class="card small muted" style="text-align:center">CHHAATI. (छाती = chest) · ' + EX.length + " exercises · works offline once visited</div>"));
 
     var dz = h('<button class="btn danger block" style="margin-top:6px">⚠ Erase all data</button>');
     dz.addEventListener("click", function () {
-      if (window.confirm("Erase ALL IronLog data on this device? Export a backup first if you care about it.")) {
+      if (window.confirm("Erase ALL chhaati data on this device? Export a backup first if you care about it.")) {
         if (window.confirm("Really erase everything? This cannot be undone.")) {
           S.resetAll(); applyTheme(S.data.settings.theme); render(); toast("Fresh start 🌱");
         }

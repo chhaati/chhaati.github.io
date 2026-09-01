@@ -1,4 +1,4 @@
-/* IronLog — storage layer. Everything lives in localStorage under one JSON blob. */
+/* chhaati — storage layer. Everything lives in localStorage under one JSON blob. */
 (function () {
   "use strict";
 
@@ -192,7 +192,7 @@
     var blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
     var a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = "ironlog-backup-" + today() + ".json";
+    a.download = "chhaati-backup-" + today() + ".json";
     document.body.appendChild(a);
     a.click();
     setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 400);
@@ -202,7 +202,7 @@
     var incoming;
     try { incoming = JSON.parse(text); } catch (e) { return { ok: false, msg: "That file isn't valid JSON." }; }
     if (!incoming || typeof incoming !== "object" || !Array.isArray(incoming.logs)) {
-      return { ok: false, msg: "That doesn't look like an IronLog backup (missing logs)." };
+      return { ok: false, msg: "That doesn't look like a chhaati backup (missing logs)." };
     }
     if (mode === "replace") {
       data = incoming;
