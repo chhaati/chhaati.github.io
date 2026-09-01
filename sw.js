@@ -36,9 +36,10 @@ self.addEventListener("fetch", function (e) {
   if (e.request.method !== "GET") return;
   var url = new URL(e.request.url);
   if (url.origin !== location.origin) return; // let fonts etc. hit the network
-  // network-first: always serve the freshest app, fall back to cache offline
+  // network-first with revalidation (bypasses the HTTP cache's max-age so
+  // deploys show up immediately); falls back to cache offline
   e.respondWith(
-    fetch(e.request).then(function (res) {
+    fetch(e.request, { cache: "no-cache" }).then(function (res) {
       if (res && res.ok) {
         var copy = res.clone();
         caches.open(CACHE).then(function (c) { c.put(e.request, copy); });

@@ -485,3 +485,155 @@ window.GYM_EXERCISES.push(
 </svg>`
   }
 );
+
+window.GYM_EXERCISES.push(
+  {
+    id: "back-iso-lateral-low-row",
+    name: "Iso-Lateral Low Row (Plate-Loaded)",
+    group: "back",
+    equipment: "machine",
+    level: 1,
+    primary: ["Lats", "Mid-back"],
+    secondary: ["Biceps", "Rear delts"],
+    steps: [
+      "Load the same number of plates on each side of the machine — one 10 lb plate per side is plenty for a first session.",
+      "Adjust the seat so the chest pad sits against your mid-chest and the handles are level with the bottom of your ribs when you reach forward.",
+      "Press your chest into the pad, grab the palms-facing handles, and sit tall with your feet planted on the footrests.",
+      "Exhale and drive your elbows straight back past your ribs until the handles reach your sides.",
+      "Pause for a second, then inhale and let your arms stretch fully forward under control — don't let the plates clank down."
+    ],
+    tips: [
+      "Each handle moves independently, so your strong side can't take over — you can even row one arm at a time to fix imbalances.",
+      "Keep your chest glued to the pad the whole set; if it peels off, you're heaving with momentum instead of rowing with your back.",
+      "Unlike pin-loaded machines there's no stack to catch the weight — set the handles down gently between sets, never drop them mid-rep.",
+      "Drive your elbows back and down, not out wide — your hands should finish beside your lower ribs."
+    ],
+    setsReps: "3 sets × 10–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="118" y1="100" x2="144" y2="100"/>
+<line x1="132" y1="100" x2="132" y2="126"/>
+<line x1="86" y1="54" x2="92" y2="82"/>
+<line x1="92" y1="82" x2="86" y2="126"/>
+<circle cx="30" cy="104" r="9"/>
+<circle cx="43" cy="108" r="7"/>
+<line x1="36" y1="118" x2="56" y2="64" stroke-width="3">
+<animate attributeName="x2" values="56;78;56" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="64;74;64" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="104" cy="42" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M102 52 L116 90 L94 100 L96 124"/>
+<path stroke="var(--acc,#a3e635)" d="M100 58 L78 60 L56 64">
+<animate attributeName="d" values="M100 58 L78 60 L56 64;M100 58 L104 74 L78 74;M100 58 L78 60 L56 64" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "back-machine-pullover",
+    name: "Machine Pullover",
+    group: "back",
+    equipment: "machine",
+    level: 1,
+    primary: ["Lats"],
+    secondary: ["Chest", "Triceps"],
+    steps: [
+      "Set the seat height so your shoulders line up with the machine's pivot point (the round cam beside your shoulder) — this is the key adjustment.",
+      "Pick a light pin to start and sit down with your back flat against the pad; fasten the seat belt if the machine has one.",
+      "Step on the foot assist bar to bring the bar within reach, grip it overhead, and rest your elbows on the pads.",
+      "Exhale and sweep the bar down in a big arc to your belly, driving with your elbows and keeping your chest tall.",
+      "Inhale and let the bar rise slowly back overhead until you feel a deep stretch along your lats, then repeat."
+    ],
+    tips: [
+      "One of the few machines that trains your lats without tiring your biceps first — you should feel it from armpit to waist.",
+      "Feeling it in your shoulders instead? The seat is probably too low — realign your shoulders with the pivot cam.",
+      "Push with your elbows, not your hands — imagine your hands are just resting on the bar for the ride.",
+      "Don't let the weight stack slam at the top; the slow overhead stretch is the best part of the rep."
+    ],
+    setsReps: "3 sets × 10–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="158" y1="126" x2="158" y2="68"/>
+<line x1="176" y1="126" x2="176" y2="68"/>
+<line x1="158" y1="68" x2="176" y2="68"/>
+<line x1="158" y1="104" x2="176" y2="104" stroke-width="3">
+<animate attributeName="y1" values="104;95;86;95;104" keyTimes="0;0.25;0.5;0.75;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 1 1;0 0 0.55 1;0.45 0 1 1;0 0 0.55 1"/>
+<animate attributeName="y2" values="104;95;86;95;104" keyTimes="0;0.25;0.5;0.75;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 1 1;0 0 0.55 1;0.45 0 1 1;0 0 0.55 1"/>
+</line>
+<line x1="98" y1="98" x2="126" y2="98"/>
+<line x1="112" y1="98" x2="112" y2="126"/>
+<line x1="118" y1="94" x2="112" y2="56"/>
+<circle cx="110" cy="50" r="4"/>
+<path d="M110 50 L104 16" stroke-width="3">
+<animate attributeName="d" values="M110 50 L104 16;M110 50 L78 37;M110 50 L82 70;M110 50 L78 37;M110 50 L104 16" keyTimes="0;0.25;0.5;0.75;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 1 1;0 0 0.55 1;0.45 0 1 1;0 0 0.55 1"/>
+</path>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="106" cy="38" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M106 48 L112 90 L84 96 L88 124"/>
+<path stroke="var(--acc,#a3e635)" d="M106 52 L106 34 L104 16">
+<animate attributeName="d" values="M106 52 L106 34 L104 16;M106 52 L92 44 L78 37;M106 52 L94 61 L82 70;M106 52 L92 44 L78 37;M106 52 L106 34 L104 16" keyTimes="0;0.25;0.5;0.75;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 1 1;0 0 0.55 1;0.45 0 1 1;0 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "back-close-grip-pulldown",
+    name: "Close-Grip Lat Pulldown (V-Bar)",
+    group: "back",
+    equipment: "machine",
+    level: 1,
+    primary: ["Lats"],
+    secondary: ["Biceps", "Mid-back"],
+    steps: [
+      "Clip the V-bar (the narrow triangle handle) onto the pulldown cable and adjust the thigh pad so it locks your legs down snugly.",
+      "Pick a moderate pin — most people can handle a little more weight here than on the wide bar.",
+      "Sit down, reach up, and grab the handle with your palms facing each other, arms fully stretched overhead.",
+      "Exhale, lean back slightly, and pull the handle down to the top of your chest with your elbows tucked close to your ribs.",
+      "Squeeze your back for a second, then inhale and let the handle rise slowly until your arms are straight again."
+    ],
+    tips: [
+      "The close, palms-facing grip is easier on the shoulders and wrists than the wide bar — a great swap if wide pulldowns feel awkward.",
+      "Lift your chest up to meet the handle at the bottom instead of hunching your shoulders forward.",
+      "Keep the slight lean-back fixed — rocking further back every rep means the pin is set too heavy.",
+      "Drive your elbows down toward your ribs, not backward; you should feel the sides of your back doing the work."
+    ],
+    setsReps: "3 sets × 10–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="40" y1="126" x2="40" y2="20"/>
+<line x1="40" y1="20" x2="84" y2="24"/>
+<line x1="24" y1="126" x2="24" y2="78"/>
+<line x1="24" y1="112" x2="40" y2="112" stroke-width="3">
+<animate attributeName="y1" values="112;96;112" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="112;96;112" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<line x1="84" y1="24" x2="88" y2="32" stroke-width="3">
+<animate attributeName="x2" values="88;92;88" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="32;70;32" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<path d="M83 38 L88 32 L93 38" stroke-width="3">
+<animate attributeName="d" values="M83 38 L88 32 L93 38;M87 76 L92 70 L97 76;M83 38 L88 32 L93 38" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+<line x1="78" y1="98" x2="112" y2="98"/>
+<line x1="94" y1="98" x2="94" y2="126"/>
+<line x1="78" y1="86" x2="96" y2="86"/>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="102" cy="46" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M102 56 L108 92 L84 94 L88 124"/>
+<path stroke="var(--acc,#a3e635)" d="M102 58 L95 45 L88 32">
+<animate attributeName="d" values="M102 58 L95 45 L88 32;M102 58 L100 68 L92 70;M102 58 L95 45 L88 32" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  }
+);

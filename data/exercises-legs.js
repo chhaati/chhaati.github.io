@@ -613,3 +613,156 @@ window.GYM_EXERCISES.push(
 </svg>`
   }
 );
+window.GYM_EXERCISES.push(
+  {
+    id: "legs-hack-squat",
+    name: "Hack Squat Machine",
+    group: "legs",
+    equipment: "machine",
+    level: 1,
+    primary: ["Quads", "Glutes"],
+    secondary: ["Hamstrings", "Calves"],
+    steps: [
+      "Load a light plate on each side of the sled (or start with it empty) and step onto the angled platform, back and shoulders snug against the pads.",
+      "Set your feet shoulder-width apart in the middle of the platform, toes slightly out, then stand up and rotate the safety handles outward to release the sled.",
+      "Inhale and bend your knees to ride the sled down until your thighs are about parallel to the platform.",
+      "Exhale and push through your whole foot to drive the sled back up.",
+      "Stop just short of locking your knees; when the set is done, rotate the handles back in to re-hook the sled."
+    ],
+    tips: [
+      "Keep your lower back and hips pressed into the back pad — if your hips curl off the pad at the bottom, you are going too deep.",
+      "The 45-degree rails make weight feel lighter than a free squat, so start with the empty sled and add small plates gradually.",
+      "Feet higher on the platform shifts work to glutes and hamstrings, lower hits more quads — but never let your heels lift.",
+      "Practice the safety-handle twist before your first rep so you can rack the sled at any point."
+    ],
+    setsReps: "3 sets × 8–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="76" y1="124" x2="172" y2="48"/>
+<line x1="150" y1="66" x2="150" y2="126"/>
+<line x1="48" y1="112" x2="84" y2="124"/>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<g>
+<line stroke="var(--equip,#64748b)" stroke-width="4" x1="115" y1="88" x2="151" y2="60"/>
+<circle stroke="var(--equip,#64748b)" stroke-width="4" r="8" cx="152" cy="72"/>
+<circle cx="148" cy="48" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M118 74 L140 56"/>
+<path d="M134 62 L120 60"/>
+<animateTransform attributeName="transform" type="translate" values="0 0;-20 16;0 0" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</g>
+<path stroke="var(--acc,#a3e635)" d="M118 74 L90 90 L66 114">
+<animate attributeName="d" values="M118 74 L90 90 L66 114;M98 90 L64 80 L66 114;M118 74 L90 90 L66 114" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "legs-glute-drive",
+    name: "Glute Drive Machine",
+    group: "legs",
+    equipment: "machine",
+    level: 1,
+    primary: ["Glutes"],
+    secondary: ["Hamstrings", "Core"],
+    steps: [
+      "Load a light plate on each side of the lever arm (or start empty), sit on the platform, and rest your upper back on the bench pad.",
+      "Buckle the belt pad snugly across your hips and set your feet flat on the footplate, hip-width apart.",
+      "Release the safety handle, tuck your chin, and exhale as you drive your hips up through your heels.",
+      "Stop when your body is a straight line from shoulders to knees and squeeze your glutes hard for one second.",
+      "Inhale and lower your hips with control until the weight almost touches down, then drive up again."
+    ],
+    tips: [
+      "Adjust your feet so your shins are vertical at the top — if your knees travel past your toes, step your feet further out on the plate.",
+      "Tighten the belt so the pad cannot bounce on your hips; snug, not painful.",
+      "Finish each rep with ribs down and glutes squeezed — do not arch your lower back at the top.",
+      "This machine is the easiest way to learn hip drive before trying a barbell hip thrust."
+    ],
+    setsReps: "3 sets × 10–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="26" y1="92" x2="60" y2="92"/>
+<line x1="32" y1="92" x2="32" y2="126"/>
+<line x1="54" y1="92" x2="54" y2="126"/>
+<line x1="108" y1="124" x2="136" y2="124"/>
+<g>
+<line x1="164" y1="120" x2="96" y2="106"/>
+<line x1="94" y1="98" x2="94" y2="112"/>
+<circle r="9" cx="138" cy="115"/>
+<animateTransform attributeName="transform" type="rotate" values="0 164 120;18 164 120;0 164 120" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</g>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="42" cy="86" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path stroke="var(--acc,#a3e635)" d="M58 92 L94 110">
+<animate attributeName="d" values="M58 92 L94 110;M58 92 L94 86;M58 92 L94 110" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+<path d="M94 110 L118 100 L120 124">
+<animate attributeName="d" values="M94 110 L118 100 L120 124;M94 86 L116 96 L120 124;M94 110 L118 100 L120 124" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "legs-smith-machine-squat",
+    name: "Smith Machine Squat",
+    group: "legs",
+    equipment: "machine",
+    level: 1,
+    primary: ["Quads", "Glutes"],
+    secondary: ["Hamstrings", "Core"],
+    steps: [
+      "Set the bar at upper-chest height, add light plates or none, and step under so the bar rests on your upper traps — not your neck.",
+      "Place your feet shoulder-width apart and a few inches in front of the bar, toes slightly out.",
+      "Stand up and rotate your wrists back to unhook the bar from the rails.",
+      "Inhale, brace your core, and bend your knees to lower until your thighs are about parallel.",
+      "Exhale and drive through your whole foot to stand, stopping just short of locked knees.",
+      "At the end of the set, rotate the bar forward to re-hook it on the nearest catch."
+    ],
+    tips: [
+      "The fixed bar path is why your feet go slightly forward — it lets you stay more upright than a free-bar squat.",
+      "Set the adjustable safety stops just below your deepest squat position before your first set.",
+      "Practice the rotate-to-unhook and rotate-to-hook wrist twist with the empty bar first.",
+      "Lower under control for 2–3 seconds and do not bounce out of the bottom."
+    ],
+    setsReps: "3 sets × 8–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="54" y1="18" x2="54" y2="126"/>
+<line x1="146" y1="18" x2="146" y2="126"/>
+<line x1="54" y1="18" x2="146" y2="18"/>
+<line x1="50" y1="38" x2="150" y2="38">
+<animate attributeName="y1" values="38;64;38" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="38;64;38" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<circle r="10" cx="66" cy="38">
+<animate attributeName="cy" values="38;64;38" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</circle>
+<circle r="10" cx="134" cy="38">
+<animate attributeName="cy" values="38;64;38" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</circle>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="100" cy="28" r="9" fill="var(--fig,#cbd5e1)" stroke="none">
+<animate attributeName="cx" values="100;98;100" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="cy" values="28;54;28" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</circle>
+<path d="M100 42 L101 78">
+<animate attributeName="d" values="M100 42 L101 78;M98 68 L99 102;M100 42 L101 78" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+<path d="M100 46 L112 41">
+<animate attributeName="d" values="M100 46 L112 41;M98 72 L110 67;M100 46 L112 41" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+<path stroke="var(--acc,#a3e635)" d="M101 78 L104 102 L90 124">
+<animate attributeName="d" values="M101 78 L104 102 L90 124;M99 102 L114 111 L90 124;M101 78 L104 102 L90 124" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  }
+);

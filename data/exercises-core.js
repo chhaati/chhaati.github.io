@@ -371,3 +371,241 @@ window.GYM_EXERCISES.push(
 </svg>`
   }
 );
+
+// Lower-abs emphasis expansion
+window.GYM_EXERCISES.push(
+  {
+    id: "core-reverse-crunch",
+    name: "Reverse Crunch",
+    group: "core",
+    equipment: "bodyweight",
+    level: 1,
+    primary: ["Lower abs"],
+    secondary: ["Obliques", "Hip Flexors"],
+    steps: [
+      "Lie on your back on a mat with your knees bent 90 degrees and shins parallel to the floor.",
+      "Rest your arms flat on the floor beside you, palms down, for balance.",
+      "Breathe out and curl your hips up off the floor, rolling your knees toward your chest.",
+      "Pause for a second at the top with your tailbone lifted, feeling the squeeze below your belly button.",
+      "Breathe in and lower your hips back down slowly until your tailbone just touches the mat, then repeat."
+    ],
+    tips: [
+      "The lift comes from curling your pelvis, not from swinging your legs — small and slow beats big and fast.",
+      "Press your palms into the floor for stability, but do not push yourself up with them.",
+      "If your lower back hurts, shrink the range: lift the tailbone just an inch or two.",
+      "Exhale fully as you curl up — it helps your lower abs fire."
+    ],
+    setsReps: "3 sets × 10–15 reps",
+    trackMode: "reps",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<line x1="34" y1="125" x2="170" y2="125" stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round"/>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+  <circle cx="50" cy="108" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+  <line x1="64" y1="112" x2="102" y2="114">
+    <animate attributeName="x2" values="102;96;102" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animate attributeName="y2" values="114;102;114" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </line>
+  <line x1="70" y1="120" x2="98" y2="121"/>
+  <path d="M102 114 L112 90 L132 98" stroke="var(--acc,#a3e635)">
+    <animate attributeName="d" values="M102 114 L112 90 L132 98;M96 102 L90 74 L112 76;M102 114 L112 90 L132 98" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+</g>
+</svg>`
+  },
+  {
+    id: "core-lying-leg-raise",
+    name: "Lying Leg Raise",
+    group: "core",
+    equipment: "bodyweight",
+    level: 1,
+    primary: ["Lower abs", "Hip Flexors"],
+    secondary: ["Deep Core"],
+    steps: [
+      "Lie flat on your back on a mat with your legs straight and together.",
+      "Slide your hands under your hips, palms down — this protects your lower back.",
+      "Breathe out and raise both legs, keeping them straight, until they point at the ceiling.",
+      "Breathe in and lower them slowly, taking about 3 seconds, stopping just before your heels touch the floor.",
+      "Keep your lower back pressed toward the floor the whole time, then repeat."
+    ],
+    tips: [
+      "The slow lower is where the lower abs work — never let the legs just drop.",
+      "If your back arches off the floor near the bottom, do not lower as far, or bend your knees slightly.",
+      "Keep your head and shoulders relaxed on the mat; no neck straining.",
+      "Too hard? Raise one leg at a time until both-legs feels controlled."
+    ],
+    setsReps: "3 sets × 8–12 reps",
+    trackMode: "reps",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<line x1="34" y1="125" x2="170" y2="125" stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round"/>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+  <circle cx="46" cy="108" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+  <line x1="60" y1="112" x2="104" y2="114"/>
+  <line x1="66" y1="120" x2="98" y2="121"/>
+  <g stroke="var(--acc,#a3e635)">
+    <animateTransform attributeName="transform" type="rotate" values="0 104 114;-76 104 114;0 104 114" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <line x1="104" y1="114" x2="156" y2="118"/>
+    <line x1="104" y1="117" x2="152" y2="122" stroke="var(--fig,#cbd5e1)"/>
+  </g>
+</g>
+</svg>`
+  },
+  {
+    id: "core-flutter-kicks",
+    name: "Flutter Kicks",
+    group: "core",
+    equipment: "bodyweight",
+    level: 1,
+    primary: ["Lower abs"],
+    secondary: ["Hip Flexors", "Quads"],
+    steps: [
+      "Lie on your back with your hands under your hips and legs straight.",
+      "Lift both heels about 15 cm (6 inches) off the floor.",
+      "Kick your legs up and down in small, quick, alternating scissors — about 30 cm of travel each.",
+      "Keep your lower back pressed down and breathe steadily; do not hold your breath.",
+      "Kick for the target time, then lower your legs and rest."
+    ],
+    tips: [
+      "Small fast kicks from the hips — knees stay almost straight, ankles relaxed.",
+      "If your lower back lifts off the floor, raise your legs higher; the closer to the floor, the harder it is.",
+      "Tuck your chin slightly and keep shoulders relaxed instead of shrugging.",
+      "Count out loud or breathe in a rhythm to avoid tensing up and breath-holding."
+    ],
+    setsReps: "3 × 20–30s",
+    trackMode: "time",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<line x1="34" y1="125" x2="170" y2="125" stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round"/>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+  <circle cx="46" cy="104" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+  <line x1="60" y1="110" x2="104" y2="114"/>
+  <line x1="66" y1="120" x2="98" y2="121"/>
+  <line x1="104" y1="114" x2="158" y2="106">
+    <animateTransform attributeName="transform" type="rotate" values="-16 104 114;-2 104 114;-16 104 114;-2 104 114;-16 104 114" keyTimes="0;0.25;0.5;0.75;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </line>
+  <line x1="104" y1="114" x2="158" y2="106" stroke="var(--acc,#a3e635)">
+    <animateTransform attributeName="transform" type="rotate" values="-2 104 114;-16 104 114;-2 104 114;-16 104 114;-2 104 114" keyTimes="0;0.25;0.5;0.75;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </line>
+</g>
+</svg>`
+  },
+  {
+    id: "core-ab-coaster-machine",
+    name: "Ab Coaster Machine",
+    group: "core",
+    equipment: "machine",
+    level: 1,
+    primary: ["Lower abs"],
+    secondary: ["Obliques", "Hip Flexors"],
+    steps: [
+      "Kneel on the swinging knee carriage at the bottom of the curved track, one knee at a time.",
+      "Grip the fixed handles on the front tower and rest your forearms on the pads, keeping your chest tall.",
+      "Start with no added weight — the carriage alone is plenty; plates go on the side pegs only once you can do 15 smooth reps.",
+      "Breathe out and curl your knees up the curve toward your chest by tucking your pelvis under.",
+      "Breathe in and ride the carriage back down slowly — do not let it free-fall — then repeat."
+    ],
+    tips: [
+      "Finish each rep with a pelvic tuck at the top; just sliding the carriage up and down works your hip flexors, not your lower abs.",
+      "Keep your arms as hooks — pulling yourself up with your shoulders is the most common mistake.",
+      "To hit the obliques, turn the knee carriage a notch to one side and do a set per side.",
+      "Add small plates (2.5–5 kg) to the carriage pegs gradually; speed and momentum ruin the exercise."
+    ],
+    setsReps: "3 sets × 12–15 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<path d="M58 28 L58 126 M44 36 L70 36" stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round"/>
+<path d="M156 118 Q112 114 86 76" stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+  <animateTransform attributeName="transform" type="translate" values="0 0;-30 -18;0 0" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  <line x1="126" y1="106" x2="150" y2="117"/>
+  <circle cx="134" cy="99" r="5"/>
+  <circle cx="141" cy="102" r="5"/>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+  <circle cx="76" cy="32" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+  <path d="M82 52 L62 38"/>
+  <path d="M82 52 L106 86 L130 102 L148 114" stroke="var(--acc,#a3e635)">
+    <animate attributeName="d" values="M82 52 L106 86 L130 102 L148 114;M82 52 L94 72 L102 88 L118 96;M82 52 L106 86 L130 102 L148 114" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+</g>
+</svg>`
+  },
+  {
+    id: "core-decline-bench-sit-up",
+    name: "Decline Bench Sit-Up",
+    group: "core",
+    equipment: "bodyweight",
+    level: 2,
+    primary: ["Abs", "Hip Flexors"],
+    secondary: ["Lower abs", "Obliques"],
+    steps: [
+      "Set the decline bench to a gentle angle to start — the steeper the decline, the harder it gets.",
+      "Sit on the bench, hook your feet under the ankle rollers and adjust them so they hold your shins snugly.",
+      "Cross your arms over your chest and lower your torso back until it is just above the bench.",
+      "Breathe out and sit up by curling your ribs toward your hips until your chest nears your thighs.",
+      "Breathe in and lower yourself back down slowly, one vertebra at a time, then repeat."
+    ],
+    tips: [
+      "Do not flop back and bounce off the bench — the slow lower is half the exercise.",
+      "Keep your chin off your chest and never yank your head with your hands.",
+      "Feeling it only in your hips or thighs? Reduce the decline angle and curl your spine more.",
+      "Hold a small plate on your chest only after bodyweight sets feel easy."
+    ],
+    setsReps: "3 sets × 8–12 reps",
+    trackMode: "reps",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<path d="M48 110 L142 76 M62 108 L62 126 M126 84 L126 126" stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round"/>
+<circle cx="152" cy="66" r="5" stroke="var(--equip,#64748b)" stroke-width="4"/>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+  <path d="M112 88 L136 72 L150 60"/>
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="0 112 88;85 112 88;0 112 88" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <line x1="112" y1="88" x2="76" y2="102" stroke="var(--acc,#a3e635)"/>
+    <circle cx="66" cy="106" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+    <path d="M80 100 L92 86"/>
+  </g>
+</g>
+</svg>`
+  },
+  {
+    id: "core-mountain-climbers",
+    name: "Mountain Climbers",
+    group: "core",
+    equipment: "bodyweight",
+    level: 1,
+    primary: ["Lower abs", "Hip Flexors"],
+    secondary: ["Shoulders", "Quads"],
+    steps: [
+      "Start in a push-up position: hands under your shoulders, body in a straight line from head to heels.",
+      "Brace your core so your hips stay level and do not pike up or sag.",
+      "Drive one knee toward your chest, then quickly switch legs, like running in place horizontally.",
+      "Keep a steady rhythm and breathe with the pace — exhale as each knee drives in.",
+      "Continue for the target time, then rest."
+    ],
+    tips: [
+      "Hips stay low and level — bouncing your bum up and down means you are going too fast.",
+      "Keep your shoulders stacked over your wrists; drifting backward makes it much easier and less effective.",
+      "New to these? Go slow and tap each foot down; speed comes after control.",
+      "Land softly on the balls of your feet to keep the movement quiet and smooth."
+    ],
+    setsReps: "3 × 20–30s",
+    trackMode: "time",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+  <circle cx="62" cy="78" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+  <path d="M70 92 L62 124 M70 92 L76 124"/>
+  <line x1="70" y1="92" x2="122" y2="102"/>
+  <path d="M122 102 L98 108 L112 122">
+    <animate attributeName="d" values="M122 102 L98 108 L112 122;M122 102 L144 114 L164 124;M122 102 L98 108 L112 122;M122 102 L144 114 L164 124;M122 102 L98 108 L112 122" keyTimes="0;0.25;0.5;0.75;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+  <path d="M122 102 L144 114 L164 124" stroke="var(--acc,#a3e635)">
+    <animate attributeName="d" values="M122 102 L144 114 L164 124;M122 102 L98 108 L112 122;M122 102 L144 114 L164 124;M122 102 L98 108 L112 122;M122 102 L144 114 L164 124" keyTimes="0;0.25;0.5;0.75;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+</g>
+</svg>`
+  }
+);

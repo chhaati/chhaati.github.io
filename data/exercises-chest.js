@@ -459,3 +459,112 @@ window.GYM_EXERCISES.push(
 </svg>`
   }
 );
+window.GYM_EXERCISES.push(
+  {
+    id: "chest-iso-lateral-press",
+    name: "Iso-Lateral Chest Press (Plate-Loaded)",
+    group: "chest",
+    equipment: "machine",
+    level: 1,
+    primary: ["Pectorals"],
+    secondary: ["Triceps", "Front Delts"],
+    steps: [
+      "Set the seat so the handles line up with the middle of your chest, then slide one small plate fully onto each side's plate horn.",
+      "Sit with your back and head against the pad, feet flat on the floor, and grab one handle in each hand.",
+      "Exhale and press both handles forward at the same speed until your arms are nearly straight.",
+      "Inhale and bring the handles back slowly over 2-3 seconds until your hands are beside your chest.",
+      "Finish by letting the levers settle gently onto their stops — never drop them."
+    ],
+    tips: [
+      "The empty levers already weigh something, so start with just one 10 lb (5 kg) plate per side.",
+      "Each arm moves independently — if one side races ahead or wobbles, go lighter until both travel together.",
+      "Load and unload plates evenly, one side at a time, and push them all the way onto the horns.",
+      "Stop just short of locking your elbows at the end of each press."
+    ],
+    setsReps: "3 sets × 8–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<path d="M64 50 L68 94"/>
+<path d="M60 94 L92 94"/>
+<path d="M78 94 L78 122"/>
+<path d="M120 122 L120 24 L138 26"/>
+<g>
+<animateTransform attributeName="transform" type="rotate" values="0 138 26;-16 138 26;0 138 26" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<line x1="138" y1="26" x2="110" y2="60"/>
+<line x1="110" y1="60" x2="110" y2="76"/>
+<line x1="138" y1="26" x2="152" y2="37"/>
+<circle cx="156" cy="40" r="9"/>
+<circle cx="156" cy="40" r="4"/>
+</g>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="74" cy="44" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M72 56 L76 88"/>
+<path d="M76 88 L92 92 L94 122"/>
+<path d="M76 88 L98 90 L100 122"/>
+<path stroke="var(--acc,#a3e635)" d="M72 58 L88 74 L106 62">
+  <animate attributeName="d" values="M72 58 L88 74 L106 62;M72 58 L98 64 L120 66;M72 58 L88 74 L106 62" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "chest-decline-press-machine",
+    name: "Decline Press Machine",
+    group: "chest",
+    equipment: "machine",
+    level: 1,
+    primary: ["Lower Pectorals"],
+    secondary: ["Triceps", "Front Delts"],
+    steps: [
+      "Adjust the seat so the handles line up with your lower chest, just below your pecs.",
+      "Push the pin fully into a light plate on the weight stack — you can add weight next set if it feels easy.",
+      "Sit back with your head and shoulders on the pad, feet flat, and grip the handles.",
+      "Exhale and press the handles forward and slightly downward until your arms are nearly straight.",
+      "Inhale and return slowly over 2-3 seconds, stopping just before the stack touches down."
+    ],
+    tips: [
+      "If the handles start at shoulder height the seat is too low — you should press from your lower chest, not your shoulders.",
+      "Keep your shoulder blades pressed into the back pad for the whole set.",
+      "A quiet stack means a controlled rep — never let the plates slam down between reps.",
+      "If the machine has a foot lever, use it to bring the handles forward for your first rep instead of reaching back."
+    ],
+    setsReps: "3 sets × 10–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<rect x="22" y="64" width="18" height="58"/>
+<line x1="22" y1="98" x2="40" y2="98"/>
+<rect x="26" y="67" width="10" height="10" stroke-width="3">
+  <animateTransform attributeName="transform" type="translate" values="0 0;0 -10;0 0" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</rect>
+<path d="M31 62 L31 28 L132 28 L132 122"/>
+<path d="M62 46 L76 96"/>
+<path d="M64 96 L96 96"/>
+<path d="M82 96 L82 122"/>
+<line x1="132" y1="28" x2="100" y2="58">
+  <animate attributeName="x2" values="100;118;100" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  <animate attributeName="y2" values="58;76;58" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<line x1="100" y1="58" x2="100" y2="72">
+  <animate attributeName="x1" values="100;118;100" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  <animate attributeName="y1" values="58;76;58" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  <animate attributeName="x2" values="100;118;100" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  <animate attributeName="y2" values="72;90;72" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="70" cy="40" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M69 52 L78 90"/>
+<path d="M78 90 L94 94 L96 122"/>
+<path d="M78 90 L100 92 L104 122"/>
+<path stroke="var(--acc,#a3e635)" d="M70 56 L88 70 L98 62">
+  <animate attributeName="d" values="M70 56 L88 70 L98 62;M70 56 L98 68 L116 78;M70 56 L88 70 L98 62" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  }
+);

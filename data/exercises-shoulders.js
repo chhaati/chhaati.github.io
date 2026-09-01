@@ -440,3 +440,58 @@ window.GYM_EXERCISES.push(
 </svg>`
   }
 );
+
+window.GYM_EXERCISES.push(
+  {
+    id: "shoulders-smith-machine-press",
+    name: "Smith Machine Shoulder Press",
+    group: "shoulders",
+    equipment: "machine",
+    level: 1,
+    primary: ["Front Delts", "Side Delts"],
+    secondary: ["Triceps", "Upper Traps"],
+    steps: [
+      "Roll an upright bench into the Smith machine and set the backrest one notch short of vertical.",
+      "Slide the bench so the bar sits directly above your shoulders — it should pass just in front of your nose, not out in front of you.",
+      "Set the safety stops just below ear height, then grip the bar a little wider than shoulder width.",
+      "Rotate your wrists back to unhook the bar, exhale, and press it up until your arms are nearly straight.",
+      "Inhale and lower under control to about chin level, then rotate the bar forward onto the hooks when the set is done."
+    ],
+    tips: [
+      "Do a practice rep with the empty bar first — the Smith bar re-racks at any height with a wrist flick, which makes it the safest way to press solo.",
+      "Bench position is everything: if you have to crane your head back to dodge the bar, slide the bench a couple of centimetres — don't just arch your back.",
+      "The bar is counterbalanced and lighter than a normal barbell, so start empty and load small plates evenly on both sleeves.",
+      "Keep your lower back against the pad; if your ribs flare and your back arches to finish a rep, strip a plate."
+    ],
+    setsReps: "3 sets × 8–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="128" y1="126" x2="128" y2="10"/>
+<line x1="142" y1="126" x2="142" y2="10"/>
+<line x1="128" y1="10" x2="142" y2="10"/>
+<line x1="90" y1="126" x2="90" y2="100"/>
+<line x1="76" y1="100" x2="104" y2="100"/>
+<line x1="94" y1="96" x2="90" y2="52"/>
+</g>
+<g stroke="var(--equip,#64748b)" stroke-linecap="round">
+<animateTransform attributeName="transform" type="translate" values="0 0;0 -30;0 0" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<line x1="94" y1="46" x2="130" y2="46" stroke-width="4"/>
+<line x1="118" y1="37" x2="118" y2="55" stroke-width="6"/>
+<line x1="124" y1="40" x2="124" y2="52" stroke-width="4"/>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<path d="M93 56 L106 66 L100 46">
+<animate attributeName="d" values="M93 56 L106 66 L100 46;M93 56 L96 34 L100 16;M93 56 L106 66 L100 46" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+<circle cx="93" cy="38" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<line x1="93" y1="48" x2="93" y2="94"/>
+<path d="M93 94 L111 102 L111 124"/>
+<path stroke="var(--acc,#a3e635)" d="M93 56 L109 64 L103 46">
+<animate attributeName="d" values="M93 56 L109 64 L103 46;M93 56 L99 33 L103 16;M93 56 L109 64 L103 46" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  }
+);
