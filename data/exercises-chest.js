@@ -800,3 +800,384 @@ window.GYM_EXERCISES.push(
 </svg>`
   }
 );
+
+window.GYM_EXERCISES.push(
+  {
+    id: "chest-converging-press-machine",
+    name: "Converging Chest Press Machine",
+    group: "chest",
+    equipment: "machine",
+    level: 1,
+    primary: ["Pectorals"],
+    secondary: ["Triceps", "Front Delts"],
+    steps: [
+      "Set the seat so the handles start right at mid-chest height, then pick a light pin setting.",
+      "Sit with your back and head on the pad, grab the handles, and plant your feet flat.",
+      "Exhale and press forward — feel the handles curve in toward each other as your arms straighten.",
+      "Squeeze your chest for one second at the point where your hands are closest together.",
+      "Inhale and ride the handles back slowly until they are beside your chest, then press again."
+    ],
+    tips: [
+      "Unlike the straight-path chest press machine, these handles travel inward on an arc — that finishing squeeze is the whole point, so never rush the last few inches.",
+      "Stop the return just before the plates touch down to keep tension on your chest.",
+      "Keep your elbows about 45 degrees from your sides, not flared straight out.",
+      "Shoulder blades stay pinned to the pad the entire set — do not reach forward at the end."
+    ],
+    setsReps: "3 sets × 10–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<path d="M40 122 L40 28 L136 28 L136 122"/>
+<path d="M64 50 L68 94"/>
+<path d="M60 94 L92 94"/>
+<path d="M78 94 L78 122"/>
+<path d="M102 66 Q116 60 126 51" stroke-dasharray="2 5" stroke-width="2"/>
+<line x1="136" y1="28" x2="100" y2="52">
+  <animate attributeName="x2" values="100;124;100" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  <animate attributeName="y2" values="52;39;52" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<line x1="100" y1="52" x2="100" y2="74" stroke-width="5">
+  <animate attributeName="x1" values="100;124;100" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  <animate attributeName="y1" values="52;39;52" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  <animate attributeName="x2" values="100;124;100" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  <animate attributeName="y2" values="74;61;74" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="74" cy="44" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M72 56 L76 88"/>
+<path d="M76 88 L92 92 L94 122"/>
+<path d="M76 88 L98 90 L100 122"/>
+<path stroke="var(--acc,#a3e635)" d="M72 58 L88 74 L100 63">
+  <animate attributeName="d" values="M72 58 L88 74 L100 63;M72 58 L100 60 L124 50;M72 58 L88 74 L100 63" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "chest-iso-lateral-decline-press",
+    name: "Iso-Lateral Decline Press (Plate-Loaded)",
+    group: "chest",
+    equipment: "machine",
+    level: 2,
+    primary: ["Lower Pectorals"],
+    secondary: ["Triceps", "Front Delts"],
+    steps: [
+      "Load the same small plates on both sides of the machine — check both sides twice before sitting down.",
+      "Adjust the seat so the handles line up with the bottom of your chest.",
+      "Grip both handles, pull your shoulder blades back into the pad, and plant your feet.",
+      "Exhale and press forward and slightly downward until your arms are nearly straight.",
+      "Inhale and lower for a slow count of three, stopping before the weight rests."
+    ],
+    tips: [
+      "Each arm moves independently — if one side wobbles or lags behind, lighten the load until both travel smoothly together.",
+      "The downward press path is what hits your lower chest; keep your ribs down and do not arch your back to flatten it out.",
+      "You can press one arm at a time to fix a weaker side — brace your free hand on the frame.",
+      "Never let the handles crash back to the start between reps."
+    ],
+    setsReps: "3 sets × 8–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<path d="M128 122 L158 122"/>
+<path d="M148 122 L136 36"/>
+<path d="M62 50 L68 94"/>
+<path d="M58 94 L90 94"/>
+<path d="M76 94 L76 122"/>
+<line x1="136" y1="36" x2="96" y2="66">
+  <animate attributeName="x2" values="96;114;96" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  <animate attributeName="y2" values="66;86;66" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<circle cx="91" cy="70" r="8">
+  <animate attributeName="cx" values="91;112;91" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  <animate attributeName="cy" values="70;92;70" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</circle>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="70" cy="46" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M68 58 L74 90"/>
+<path d="M74 90 L96 94 L98 122"/>
+<path d="M74 90 L90 96 L90 122"/>
+<path stroke="var(--acc,#a3e635)" d="M68 60 L84 72 L96 66">
+  <animate attributeName="d" values="M68 60 L84 72 L96 66;M68 60 L92 76 L114 86;M68 60 L84 72 L96 66" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "chest-incline-cable-fly",
+    name: "Incline Cable Fly",
+    group: "chest",
+    equipment: "cable",
+    level: 2,
+    primary: ["Upper Pectorals"],
+    secondary: ["Front Delts"],
+    steps: [
+      "Drag an incline bench (30–45 degrees) to the middle of the cable crossover and set both pulleys to the lowest notch.",
+      "Pick a light weight on each stack, grab one handle, sit down, then reach for the other.",
+      "Lie back with arms wide and low, elbows slightly bent, palms facing up and in.",
+      "Exhale and sweep both hands up and together over your upper chest, like hugging a big tree.",
+      "Inhale and lower slowly until you feel a gentle stretch across your chest, then repeat."
+    ],
+    tips: [
+      "Cables pull on your chest even at the bottom stretch — where dumbbells go slack — so move extra slowly through that range.",
+      "Keep the same slight elbow bend the whole rep; bending more as you tire turns it into a press.",
+      "If your shoulders complain, shrink the range — only go as wide as feels pain-free."
+    ],
+    setsReps: "3 sets × 12–15 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<path d="M28 124 L28 32"/>
+<path d="M168 124 L168 32"/>
+<rect x="158" y="94" width="14" height="28"/>
+<circle cx="162" cy="112" r="4"/>
+<path d="M70 104 L104 62"/>
+<path d="M80 122 L84 100"/>
+<line x1="162" y1="112" x2="130" y2="92" stroke-width="2">
+  <animate attributeName="x2" values="130;118;130" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  <animate attributeName="y2" values="92;40;92" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="110" cy="54" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M104 64 L80 94"/>
+<path d="M80 94 L98 102 L100 124"/>
+<path d="M80 94 L90 106 L88 124"/>
+<path stroke="var(--acc,#a3e635)" d="M100 68 L116 80 L130 92">
+  <animate attributeName="d" values="M100 68 L116 80 L130 92;M100 68 L112 54 L118 40;M100 68 L116 80 L130 92" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "chest-seated-cable-press",
+    name: "Seated Cable Chest Press",
+    group: "chest",
+    equipment: "cable",
+    level: 1,
+    primary: ["Pectorals"],
+    secondary: ["Triceps", "Core"],
+    steps: [
+      "Place a bench in front of the functional trainer, facing away from it, and set both pulleys to chest height.",
+      "Pick a light weight, sit down, and hold a handle at each side of your chest.",
+      "Exhale and press both handles straight forward until your arms are nearly straight.",
+      "Pause for a second, then inhale and bring your hands back beside your chest slowly.",
+      "Keep your chest tall and belly braced the entire set."
+    ],
+    tips: [
+      "Unlike the chest press machine, nothing guides these handles — a little wobble is normal at first; slower reps and lighter weight fix it.",
+      "Brace your stomach like someone is about to poke it — the cables constantly pull you backward.",
+      "Do not shrug your shoulders toward your ears as you press."
+    ],
+    setsReps: "3 sets × 10–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<path d="M30 124 L30 24 L46 24"/>
+<rect x="22" y="88" width="14" height="34"/>
+<circle cx="34" cy="60" r="4"/>
+<path d="M66 62 L70 96"/>
+<path d="M62 96 L94 96"/>
+<path d="M80 96 L80 124"/>
+<line x1="36" y1="60" x2="96" y2="62" stroke-width="2">
+  <animate attributeName="x2" values="96;124;96" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  <animate attributeName="y2" values="62;58;62" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="80" cy="44" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M78 56 L82 90"/>
+<path d="M82 90 L100 94 L102 122"/>
+<path d="M82 90 L106 92 L108 122"/>
+<path stroke="var(--acc,#a3e635)" d="M78 58 L92 72 L96 62">
+  <animate attributeName="d" values="M78 58 L92 72 L96 62;M78 58 L102 62 L124 58;M78 58 L92 72 L96 62" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "chest-single-arm-cable-press",
+    name: "Single-Arm Cable Chest Press",
+    group: "chest",
+    equipment: "cable",
+    level: 2,
+    primary: ["Pectorals"],
+    secondary: ["Core", "Triceps"],
+    steps: [
+      "Set one pulley to chest height and pick a light weight — this is harder than it looks.",
+      "Face away from the stack holding the handle at your chest, and step into a split stance with the opposite foot forward.",
+      "Exhale and press the handle straight forward without letting your torso twist.",
+      "Inhale and return your hand to your chest under control.",
+      "Finish all reps on one arm, then switch arms and switch which foot is forward."
+    ],
+    tips: [
+      "The hidden work is your core fighting the twist — if your shoulders rotate toward the machine, the weight is too heavy.",
+      "Keep your hips pointing straight ahead like headlights for the whole set.",
+      "Stand tall; do not lean forward to shove the weight out."
+    ],
+    setsReps: "3 sets × 10–12 reps each arm",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<path d="M28 124 L28 24 L44 24"/>
+<rect x="20" y="86" width="14" height="36"/>
+<circle cx="32" cy="56" r="4"/>
+<line x1="34" y1="56" x2="104" y2="54" stroke-width="2">
+  <animate attributeName="x2" values="104;130;104" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  <animate attributeName="y2" values="54;52;54" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="92" cy="36" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M90 48 L94 86"/>
+<path d="M94 86 L112 102 L116 124"/>
+<path d="M94 86 L80 106 L72 124"/>
+<path d="M90 50 L96 66 L94 78"/>
+<path stroke="var(--acc,#a3e635)" d="M90 50 L102 66 L104 54">
+  <animate attributeName="d" values="M90 50 L102 66 L104 54;M90 50 L112 56 L130 52;M90 50 L102 66 L104 54" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "chest-landmine-press",
+    name: "Landmine Chest Press",
+    group: "chest",
+    equipment: "barbell",
+    level: 1,
+    primary: ["Pectorals"],
+    secondary: ["Front Delts", "Triceps", "Core"],
+    steps: [
+      "Wedge one end of a barbell into the landmine sleeve and load a small plate on the free end.",
+      "Stand facing the bar with feet shoulder-width and cup the very end of the bar in both hands at mid-chest.",
+      "Exhale and press the bar up and forward until your arms are straight — it travels on a natural arc.",
+      "Inhale and lower the bar back to your chest over two slow counts.",
+      "Too easy standing? Do it kneeling to take your legs out of the movement."
+    ],
+    tips: [
+      "The up-and-forward arc is much friendlier to cranky shoulders than a flat barbell press — a great first pressing exercise.",
+      "Squeeze your glutes and keep your ribs down; the most common mistake is leaning back to finish the press.",
+      "Interlace your fingers around the fat end of the bar so it cannot slip."
+    ],
+    setsReps: "3 sets × 8–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<path d="M22 124 L40 124"/>
+<circle cx="30" cy="119" r="3"/>
+<g>
+<line x1="30" y1="120" x2="106" y2="66"/>
+<circle cx="90" cy="77" r="8"/>
+<animateTransform attributeName="transform" type="rotate" values="0 30 120;-11 30 120;0 30 120" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</g>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="124" cy="40" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M122 52 L120 88"/>
+<path d="M120 88 L132 106 L134 124"/>
+<path d="M120 88 L112 108 L108 124"/>
+<path stroke="var(--acc,#a3e635)" d="M122 54 L112 68 L106 66">
+  <animate attributeName="d" values="M122 54 L112 68 L106 66;M122 54 L106 58 L94 52;M122 54 L112 68 L106 66" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "chest-incline-push-up-smith",
+    name: "Incline Push-Up on Smith Bar",
+    group: "chest",
+    equipment: "bodyweight",
+    level: 1,
+    primary: ["Pectorals"],
+    secondary: ["Triceps", "Core"],
+    steps: [
+      "Set the Smith machine bar to about hip height and rock it back so it locks into the hooks.",
+      "Grip the bar slightly wider than your shoulders and walk your feet back until your body is one straight line.",
+      "Inhale and bend your elbows to lower your chest to the bar over two counts.",
+      "Exhale and push back up until your arms are straight.",
+      "When you can do 15 clean reps, move the bar one notch lower next time."
+    ],
+    tips: [
+      "Bar height is your difficulty dial — higher is easier, lower is harder — making this the perfect ramp toward floor push-ups.",
+      "The most common mistake is sagging hips: squeeze your belly and glutes to stay plank-straight.",
+      "Double-check the bar is latched in its hooks, not just resting on them, before you lean on it."
+    ],
+    setsReps: "3 sets × 8–15 reps",
+    trackMode: "reps",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="58" y1="20" x2="58" y2="124"/>
+<line x1="74" y1="20" x2="74" y2="124"/>
+<circle cx="66" cy="74" r="5"/>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="92" cy="60" r="9" fill="var(--fig,#cbd5e1)" stroke="none">
+  <animate attributeName="cx" values="92;80;92" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  <animate attributeName="cy" values="60;70;60" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</circle>
+<path d="M146 124 L100 70">
+  <animate attributeName="d" values="M146 124 L100 70;M146 124 L90 81;M146 124 L100 70" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+<path stroke="var(--acc,#a3e635)" d="M100 70 L83 71 L66 74">
+  <animate attributeName="d" values="M100 70 L83 71 L66 74;M90 81 L76 90 L66 74;M100 70 L83 71 L66 74" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "chest-seated-dip-machine",
+    name: "Seated Dip Machine",
+    group: "chest",
+    equipment: "machine",
+    level: 1,
+    primary: ["Lower Pectorals"],
+    secondary: ["Triceps", "Front Delts"],
+    steps: [
+      "Set the seat so the handles sit level with your lower chest, and pick a light pin setting.",
+      "Grip the handles and lean your chest slightly forward — keep that lean the whole set.",
+      "Exhale and press the handles down until your arms are straight.",
+      "Inhale and let your hands rise back to chest height over a slow count of three.",
+      "Stop before the weight stack touches down, then press again."
+    ],
+    tips: [
+      "The forward chest lean is what separates this from the upright triceps dip machine — sit bolt upright and your triceps take over instead of your chest.",
+      "Keep your shoulders pulled down away from your ears; do not shrug as you press.",
+      "If your elbows barely bend at the top, lower the weight so you get a full range of motion."
+    ],
+    setsReps: "3 sets × 10–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<path d="M132 122 L132 34"/>
+<rect x="138" y="84" width="16" height="38"/>
+<line x1="138" y1="96" x2="154" y2="96"/>
+<line x1="138" y1="108" x2="154" y2="108"/>
+<path d="M60 50 L64 92"/>
+<path d="M56 92 L88 92"/>
+<path d="M72 92 L72 122"/>
+<line x1="130" y1="58" x2="94" y2="64">
+  <animate attributeName="x2" values="94;100;94" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  <animate attributeName="y2" values="64;86;64" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="82" cy="42" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M80 54 L78 90"/>
+<path d="M78 90 L96 94 L98 122"/>
+<path d="M78 90 L90 96 L90 122"/>
+<path stroke="var(--acc,#a3e635)" d="M80 56 L92 64 L94 62">
+  <animate attributeName="d" values="M80 56 L92 64 L94 62;M80 56 L90 76 L100 86;M80 56 L92 64 L94 62" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  }
+);

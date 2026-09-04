@@ -766,3 +766,301 @@ window.GYM_EXERCISES.push(
 </svg>`
   }
 );
+
+window.GYM_EXERCISES.push(
+  {
+    id: "legs-lying-leg-curl",
+    name: "Lying Leg Curl Machine",
+    group: "legs",
+    equipment: "machine",
+    level: 1,
+    primary: ["Hamstrings"],
+    secondary: ["Calves", "Glutes"],
+    steps: [
+      "Adjust the ankle roller so it rests on your lower calves, just above your heels, when you lie down.",
+      "Lie face-down on the pad with your kneecaps just off the edge of the bench, and grip the handles.",
+      "Exhale and curl your heels up toward your glutes in one smooth arc.",
+      "Squeeze your hamstrings for a second at the top.",
+      "Inhale and lower over about 2 seconds until your legs are almost straight, keeping tension on the stack."
+    ],
+    tips: [
+      "The number one mistake: letting your hips pop up off the pad to help the weight up. Keep your hips pressed down the whole set.",
+      "This is a different machine from the seated leg curl — here you lie face-down, which many beginners find gives a stronger squeeze at the top.",
+      "If the roller digs into your Achilles or sits up on your calves, get off and re-adjust the lever — it should sit right above the heels.",
+      "Don't fully relax at the bottom; stop just before the plates touch to keep the muscle working."
+    ],
+    setsReps: "3 sets × 10–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="22" y1="92" x2="136" y2="92"/>
+<line x1="32" y1="92" x2="32" y2="126"/>
+<line x1="124" y1="92" x2="124" y2="126"/>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="32" cy="81" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M42 85 L102 85"/>
+<path d="M54 86 L56 104"/>
+<path d="M102 85 L130 88"/>
+<g stroke="var(--acc,#a3e635)">
+<path d="M130 88 L162 92"/>
+<circle cx="156" cy="83" r="5" stroke="var(--equip,#64748b)" stroke-width="4"/>
+<animateTransform attributeName="transform" type="rotate" values="0 130 88;-100 130 88;0 130 88" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</g>
+</g>
+</svg>`
+  },
+  {
+    id: "legs-standing-single-leg-curl",
+    name: "Standing Single-Leg Curl Machine",
+    group: "legs",
+    equipment: "machine",
+    level: 1,
+    primary: ["Hamstrings"],
+    secondary: ["Calves"],
+    steps: [
+      "Stand facing the machine with the front of your thigh resting against the thigh pad, and hook the roller behind your lower calf.",
+      "Hold the handles and stand tall on your support leg with a soft, unlocked knee.",
+      "Exhale and curl your heel up toward your glute as far as it will go.",
+      "Pause briefly at the top, then inhale and lower with control until the leg is nearly straight.",
+      "Finish all reps on that leg, then switch sides."
+    ],
+    tips: [
+      "The most common mistake is swinging your hips or leaning back to hoist the weight — keep your thigh glued to the pad and move only the lower leg.",
+      "Training one leg at a time reveals if one hamstring is weaker; always start with the weaker side and match its reps on the strong side.",
+      "Use noticeably less weight than the seated leg curl — one hamstring is doing all the work here."
+    ],
+    setsReps: "3 sets × 10–12 reps per leg",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="58" y1="34" x2="58" y2="126"/>
+<line x1="58" y1="44" x2="78" y2="44"/>
+<line x1="62" y1="80" x2="88" y2="80"/>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="88" cy="24" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M90 34 L94 72"/>
+<path d="M90 44 L70 47"/>
+<path d="M94 72 L96 98 L92 124"/>
+<path stroke="var(--acc,#a3e635)" d="M94 72 L98 100"/>
+<g stroke="var(--acc,#a3e635)">
+<path d="M98 100 L100 124"/>
+<circle cx="105" cy="117" r="5" stroke="var(--equip,#64748b)" stroke-width="4"/>
+<animateTransform attributeName="transform" type="rotate" values="0 98 100;-110 98 100;0 98 100" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</g>
+</g>
+</svg>`
+  },
+  {
+    id: "legs-single-leg-press",
+    name: "Single-Leg Leg Press",
+    group: "legs",
+    equipment: "machine",
+    level: 2,
+    primary: ["Quads", "Glutes"],
+    secondary: ["Hamstrings"],
+    steps: [
+      "Set the seat exactly as you would for the two-leg leg press, but load half your usual weight or less.",
+      "Place one foot flat in the center of the platform; tuck the other foot down out of the way on the floor or frame.",
+      "Exhale and press the platform away through your whole foot, stopping just short of locking the knee.",
+      "Inhale and bend the knee back to about 90 degrees, keeping it tracking in line with your toes.",
+      "Do all reps, then switch legs — always start the set with your weaker leg."
+    ],
+    tips: [
+      "Center the foot on the platform so the sled doesn't twist — this exercise exists to find and fix side-to-side strength gaps the two-leg press can hide.",
+      "Most common mistake: letting the knee cave inward on the press. Keep it pointed over your middle toes.",
+      "Keep both hips square on the seat pad; don't shift your body toward the working leg."
+    ],
+    setsReps: "3 sets × 10 reps per leg",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="34" y1="54" x2="34" y2="106"/>
+<line x1="34" y1="106" x2="64" y2="106"/>
+<line x1="42" y1="106" x2="42" y2="126"/>
+<line x1="88" y1="112" x2="170" y2="112"/>
+<line x1="150" y1="66" x2="150" y2="108">
+<animate attributeName="x1" values="150;118;150" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="x2" values="150;118;150" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="46" cy="48" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M46 58 L52 98"/>
+<path d="M48 64 L64 88"/>
+<path d="M52 98 L76 106 L70 122"/>
+<path stroke="var(--acc,#a3e635)" d="M52 98 L100 84 L144 92">
+<animate attributeName="d" values="M52 98 L100 84 L144 92;M52 98 L84 70 L112 90;M52 98 L100 84 L144 92" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "legs-belt-squat",
+    name: "Belt Squat Machine",
+    group: "legs",
+    equipment: "machine",
+    level: 2,
+    primary: ["Quads", "Glutes"],
+    secondary: ["Hamstrings"],
+    steps: [
+      "Stand on the platform, clip the belt snugly around your hips, and attach it to the load hanging below.",
+      "Set feet shoulder-width apart, stand tall to take the weight, and use the lever to release the safety.",
+      "Inhale and squat down by pushing your hips back and bending your knees, chest up and eyes forward.",
+      "Go until your thighs are about parallel to the platform, then exhale and drive up through your whole foot.",
+      "When done, lower the load onto the safety with the lever before unclipping the belt."
+    ],
+    tips: [
+      "The load hangs from your hips, not your shoulders — zero weight on your spine, which makes this a great squat on days your back is tired.",
+      "Common mistake: folding forward like a barbell squat. The belt pulls straight down, so stay more upright and let your legs do the work.",
+      "Keep your whole foot planted; if your heels lift, sit back a little more."
+    ],
+    setsReps: "3 sets × 10–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="52" y1="100" x2="92" y2="100"/>
+<line x1="108" y1="100" x2="148" y2="100"/>
+<line x1="58" y1="100" x2="58" y2="126"/>
+<line x1="142" y1="100" x2="142" y2="126"/>
+<line x1="93" y1="52" x2="107" y2="52">
+<animate attributeName="y1" values="52;66;52" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="52;66;52" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<line x1="100" y1="54" x2="100" y2="102">
+<animate attributeName="y1" values="54;68;54" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="102;116;102" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<circle cx="100" cy="108" r="5">
+<animate attributeName="cy" values="108;122;108" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</circle>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="100" cy="18" r="9" fill="var(--fig,#cbd5e1)" stroke="none">
+<animate attributeName="cy" values="18;32;18" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</circle>
+<path d="M100 29 L100 52">
+<animate attributeName="d" values="M100 29 L100 52;M102 43 L100 66;M100 29 L100 52" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+<path d="M100 38 L116 44">
+<animate attributeName="d" values="M100 38 L116 44;M102 52 L118 58;M100 38 L116 44" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+<path stroke="var(--acc,#a3e635)" d="M100 52 L106 78 L96 100">
+<animate attributeName="d" values="M100 52 L106 78 L96 100;M100 66 L110 84 L96 100;M100 52 L106 78 L96 100" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "legs-smith-split-squat",
+    name: "Smith Machine Split Squat",
+    group: "legs",
+    equipment: "machine",
+    level: 2,
+    primary: ["Quads", "Glutes"],
+    secondary: ["Hamstrings"],
+    steps: [
+      "Set the Smith bar to shoulder height, duck under it, and rest it across your upper back — not your neck.",
+      "Step one foot well forward and set the rear foot back behind you, on the floor or up on a bench.",
+      "Rotate the bar off its hooks, inhale, and bend the front knee to lower straight down.",
+      "Stop when the front thigh is near parallel to the floor, then exhale and push up through the front heel.",
+      "Finish all reps, rotate the bar back onto the hooks, and switch legs."
+    ],
+    tips: [
+      "The rails balance the bar for you, so all your focus goes to the working front leg — a great way to learn split squats before trying them with free weights.",
+      "Most common mistake: standing too close to the bar path, so the front knee shoots far past the toes. Step far enough forward that your front shin stays near vertical at the bottom.",
+      "Keep most of your weight on the front foot — the back leg is only a kickstand for balance."
+    ],
+    setsReps: "3 sets × 8–10 reps per leg",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="58" y1="14" x2="58" y2="126"/>
+<line x1="142" y1="14" x2="142" y2="126"/>
+<line x1="116" y1="104" x2="144" y2="104"/>
+<line x1="120" y1="104" x2="120" y2="126"/>
+<line x1="140" y1="104" x2="140" y2="126"/>
+<line x1="50" y1="42" x2="150" y2="42">
+<animate attributeName="y1" values="42;62;42" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="42;62;42" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<circle cx="64" cy="42" r="8">
+<animate attributeName="cy" values="42;62;42" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</circle>
+<circle cx="136" cy="42" r="8">
+<animate attributeName="cy" values="42;62;42" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</circle>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="98" cy="30" r="9" fill="var(--fig,#cbd5e1)" stroke="none">
+<animate attributeName="cy" values="30;50;30" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</circle>
+<path d="M99 42 L100 72">
+<animate attributeName="d" values="M99 42 L100 72;M99 62 L100 92;M99 42 L100 72" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+<path d="M99 46 L114 42">
+<animate attributeName="d" values="M99 46 L114 42;M99 66 L114 62;M99 46 L114 42" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+<path d="M100 72 L114 92 L130 100">
+<animate attributeName="d" values="M100 72 L114 92 L130 100;M100 92 L110 106 L130 100;M100 72 L114 92 L130 100" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+<path stroke="var(--acc,#a3e635)" d="M100 72 L90 98 L82 124">
+<animate attributeName="d" values="M100 72 L90 98 L82 124;M100 92 L80 104 L82 124;M100 72 L90 98 L82 124" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "legs-leg-press-calf-raise",
+    name: "Leg Press Calf Raise",
+    group: "legs",
+    equipment: "machine",
+    level: 1,
+    primary: ["Calves"],
+    secondary: [],
+    steps: [
+      "Sit in the leg press and press the sled out until your legs are almost straight — keep a slight bend in the knees.",
+      "Walk your feet down the platform so only the balls of your feet rest on its low edge, heels hanging off.",
+      "Exhale and push the sled away by pressing through your toes as high as you can.",
+      "Pause a second at the top, then inhale and let your heels drop back past the platform edge for a deep stretch.",
+      "Move slowly and deliberately — the range is short, so make every inch count."
+    ],
+    tips: [
+      "Keep the machine's safety catches set: if a foot ever slipped off the low edge, the stops catch the sled.",
+      "Most common mistake: fast bouncy half-reps. Go all the way up onto the toes and all the way down into the stretch.",
+      "Convenient combo: do these right after your leg press sets — you're already seated with the weight loaded, no separate calf machine needed."
+    ],
+    setsReps: "3 sets × 12–15 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="34" y1="54" x2="34" y2="106"/>
+<line x1="34" y1="106" x2="64" y2="106"/>
+<line x1="42" y1="106" x2="42" y2="126"/>
+<line x1="88" y1="112" x2="170" y2="112"/>
+<line x1="152" y1="66" x2="152" y2="108">
+<animate attributeName="x1" values="152;161;152" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="x2" values="152;161;152" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="46" cy="48" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M46 58 L52 98"/>
+<path d="M48 64 L64 88"/>
+<path d="M52 98 L102 86 L140 94">
+<animate attributeName="d" values="M52 98 L102 86 L140 94;M52 98 L102 85 L142 92;M52 98 L102 86 L140 94" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+<path stroke="var(--acc,#a3e635)" d="M140 94 L149 104">
+<animate attributeName="d" values="M140 94 L149 104;M142 92 L158 99;M140 94 L149 104" dur="2.2s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  }
+);

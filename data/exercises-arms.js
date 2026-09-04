@@ -772,3 +772,212 @@ window.GYM_EXERCISES.push(
 </svg>`
   }
 );
+
+window.GYM_EXERCISES.push(
+  {
+    id: "arms-single-arm-cable-curl",
+    name: "Single-Arm Cable Curl",
+    group: "arms",
+    equipment: "cable",
+    level: 1,
+    primary: ["Biceps"],
+    secondary: ["Forearms"],
+    steps: [
+      "Set the pulley to its lowest position and clip on a single D-handle.",
+      "Grab the handle palm up, then take one small step back so the cable is taut while your arm hangs straight down.",
+      "Pin your elbow against your side and exhale as you curl the handle all the way up to your shoulder.",
+      "Inhale and lower for a slow 2-3 count until your arm is fully straight, then repeat. Do all reps, then switch arms."
+    ],
+    tips: [
+      "The one mistake to avoid: letting your elbow drift forward. If the elbow moves, your shoulder is lifting the weight, not your biceps.",
+      "Unlike a dumbbell curl, the cable never goes slack at the bottom - there is no resting spot, so pick a lighter weight than you'd curl with a dumbbell.",
+      "Rest your free hand on your hip or the machine frame so the stack can't twist you sideways.",
+      "Stand tall and squeeze at the top for one second - no leaning back to swing it up."
+    ],
+    setsReps: "3 sets × 10–12 reps per arm",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="148" y1="126" x2="148" y2="26"/>
+<line x1="176" y1="126" x2="176" y2="26"/>
+<line x1="148" y1="26" x2="176" y2="26"/>
+<circle cx="149" cy="116" r="3"/>
+</g>
+<line x1="152" y1="104" x2="172" y2="104" stroke="var(--equip,#64748b)" stroke-width="12">
+<animate attributeName="y1" values="104;92;104" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="104;92;104" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<line x1="149" y1="116" x2="112" y2="96" stroke="var(--equip,#64748b)" stroke-width="2.5">
+<animate attributeName="x2" values="112;106;112" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="96;58;96" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="98" cy="42" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<line x1="90" y1="88" x2="96" y2="53"/>
+<path d="M90 88 L95 108 L93 126"/>
+<path d="M90 88 L85 108 L83 126"/>
+<line x1="96" y1="53" x2="99" y2="76"/>
+</g>
+<path d="M99 76 L112 96" stroke="var(--acc,#a3e635)" stroke-width="6" stroke-linecap="round">
+<animate attributeName="d" values="M99 76 L112 96;M99 76 L106 58;M99 76 L112 96" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</svg>`
+  },
+  {
+    id: "arms-overhead-cable-triceps-extension",
+    name: "Overhead Cable Triceps Extension",
+    group: "arms",
+    equipment: "cable",
+    level: 2,
+    primary: ["Triceps"],
+    secondary: ["Core"],
+    steps: [
+      "Clip a rope to a low-to-mid pulley, grab both ends, and turn to face away from the machine.",
+      "Step forward into a staggered stance and hinge slightly forward, bringing your hands behind your head with elbows bent and pointing up beside your ears.",
+      "Exhale and extend your arms until they are straight up and slightly forward, keeping your elbows in the same spot the whole time.",
+      "Inhale and bend your elbows to lower your hands behind your head until you feel a deep stretch down the back of your arms."
+    ],
+    tips: [
+      "This is THE long-head stretch move: the overhead position stretches the biggest part of the triceps. That deep stretch at the bottom is the point - don't cut it short.",
+      "Elbows stay narrow, beside your ears. The most common mistake is letting them flare out wide, which takes the triceps out of the movement.",
+      "Unlike the overhead dumbbell version, the cable keeps tension on the triceps even in the bottom stretch - so go lighter than you think.",
+      "Brace your abs and keep the staggered stance solid so the stack can't pull you backward."
+    ],
+    setsReps: "3 sets × 10–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="24" y1="126" x2="24" y2="26"/>
+<line x1="52" y1="126" x2="52" y2="26"/>
+<line x1="24" y1="26" x2="52" y2="26"/>
+<circle cx="51" cy="112" r="3"/>
+</g>
+<line x1="28" y1="104" x2="48" y2="104" stroke="var(--equip,#64748b)" stroke-width="12">
+<animate attributeName="y1" values="104;90;104" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="104;90;104" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<line x1="51" y1="112" x2="100" y2="32" stroke="var(--equip,#64748b)" stroke-width="2.5">
+<animate attributeName="x2" values="100;124;100" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="32;18;32" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="114" cy="42" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<line x1="96" y1="90" x2="108" y2="56"/>
+<path d="M96 90 L116 106 L120 126"/>
+<path d="M96 90 L84 108 L74 126"/>
+<line x1="108" y1="56" x2="120" y2="40"/>
+</g>
+<path d="M120 40 L100 32" stroke="var(--acc,#a3e635)" stroke-width="6" stroke-linecap="round">
+<animate attributeName="d" values="M120 40 L100 32;M120 40 L124 18;M120 40 L100 32" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</svg>`
+  },
+  {
+    id: "arms-reverse-grip-triceps-pushdown",
+    name: "Reverse-Grip Triceps Pushdown",
+    group: "arms",
+    equipment: "cable",
+    level: 1,
+    primary: ["Triceps"],
+    secondary: ["Forearms"],
+    steps: [
+      "Attach a straight bar to the highest pulley and grip it palms UP (underhand), hands about shoulder-width apart.",
+      "Take one small step back, pin your elbows to your sides, and start with the bar around chest height.",
+      "Exhale and push the bar straight down until your arms are fully locked out at your thighs.",
+      "Squeeze the triceps for a second, then inhale and let the bar rise under control back to chest height - your elbows never move."
+    ],
+    tips: [
+      "Same movement as the rope pushdown, but the palms-up grip forces your elbows to stay tucked and shifts emphasis toward the inner (medial) head of the triceps.",
+      "Your grip gives out before your triceps do here, so go noticeably lighter than your rope-pushdown weight.",
+      "Keep your wrists straight and locked - don't let the bar roll your fingers open on the way up.",
+      "The most common mistake: shrugging your shoulders and leaning on the bar. Stand tall and let only your forearms move."
+    ],
+    setsReps: "3 sets × 12–15 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="148" y1="126" x2="148" y2="26"/>
+<line x1="176" y1="126" x2="176" y2="26"/>
+<line x1="148" y1="26" x2="176" y2="26"/>
+<circle cx="149" cy="31" r="3"/>
+</g>
+<line x1="152" y1="104" x2="172" y2="104" stroke="var(--equip,#64748b)" stroke-width="12">
+<animate attributeName="y1" values="104;90;104" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="104;90;104" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<line x1="149" y1="31" x2="112" y2="60" stroke="var(--equip,#64748b)" stroke-width="2.5">
+<animate attributeName="x2" values="112;114;112" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="60;98;60" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<line x1="104" y1="60" x2="124" y2="60" stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<animate attributeName="x1" values="104;106;104" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y1" values="60;98;60" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="x2" values="124;126;124" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="60;98;60" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="98" cy="42" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<line x1="90" y1="88" x2="96" y2="53"/>
+<path d="M90 88 L95 108 L93 126"/>
+<path d="M90 88 L85 108 L83 126"/>
+<line x1="96" y1="53" x2="99" y2="76"/>
+</g>
+<path d="M99 76 L112 60" stroke="var(--acc,#a3e635)" stroke-width="6" stroke-linecap="round">
+<animate attributeName="d" values="M99 76 L112 60;M99 76 L114 98;M99 76 L112 60" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</svg>`
+  },
+  {
+    id: "arms-bayesian-cable-curl",
+    name: "Bayesian Cable Curl",
+    group: "arms",
+    equipment: "cable",
+    level: 2,
+    primary: ["Biceps"],
+    secondary: ["Forearms"],
+    steps: [
+      "Set the pulley to its lowest position with a single D-handle, grab it palm forward, and turn to face away from the machine.",
+      "Take one or two steps forward into a staggered stance so the cable pulls your straight arm slightly behind your body.",
+      "Keeping your upper arm back beside (or just behind) your torso, exhale and curl the handle up and forward toward your shoulder.",
+      "Inhale and lower slowly until your arm is fully straight behind you again - that stretched bottom position is the whole point."
+    ],
+    tips: [
+      "The difference from a regular cable curl: facing away puts the biceps' long head on stretch AND under cable tension for the entire rep - nowhere to hide, so go light.",
+      "The one mistake to avoid: letting your elbow swing forward as you curl. The upper arm stays pinned back; only the forearm moves.",
+      "Step far enough forward that the cable still pulls when your arm hangs straight - if it goes slack at the bottom, you are standing too close.",
+      "Lean your torso slightly forward and brace; do all reps on one arm, then switch."
+    ],
+    setsReps: "3 sets × 10–12 reps per arm",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="24" y1="126" x2="24" y2="26"/>
+<line x1="52" y1="126" x2="52" y2="26"/>
+<line x1="24" y1="26" x2="52" y2="26"/>
+<circle cx="51" cy="112" r="3"/>
+</g>
+<line x1="28" y1="104" x2="48" y2="104" stroke="var(--equip,#64748b)" stroke-width="12">
+<animate attributeName="y1" values="104;92;104" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="104;92;104" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<line x1="51" y1="112" x2="84" y2="94" stroke="var(--equip,#64748b)" stroke-width="2.5">
+<animate attributeName="x2" values="84;112;84" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="94;64;94" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="108" cy="41" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<line x1="98" y1="90" x2="104" y2="55"/>
+<path d="M98 90 L114 108 L118 126"/>
+<path d="M98 90 L86 108 L78 126"/>
+<line x1="104" y1="55" x2="98" y2="78"/>
+</g>
+<path d="M98 78 L84 94" stroke="var(--acc,#a3e635)" stroke-width="6" stroke-linecap="round">
+<animate attributeName="d" values="M98 78 L84 94;M98 78 L112 64;M98 78 L84 94" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</svg>`
+  }
+);

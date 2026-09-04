@@ -7,7 +7,7 @@ no build step — perfect for GitHub Pages.
 
 ## Features
 
-- **~70-exercise library** with animated demos (SVG "GIFs"), organized by Chest / Back /
+- **140-exercise library** with animated demos (SVG "GIFs"), organized by Chest / Back /
   Legs / Shoulders / Arms / Core / Cardio, filterable by equipment.
 - **Exercise of the Day** — learn one new movement daily; track how many you've mastered.
 - **Weight memory** — logs every set; next time you open a machine it pre-fills your last

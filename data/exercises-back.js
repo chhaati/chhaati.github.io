@@ -787,3 +787,581 @@ window.GYM_EXERCISES.push(
 </svg>`
   }
 );
+
+window.GYM_EXERCISES.push(
+  {
+    id: "back-wide-grip-lat-pulldown",
+    name: "Wide-Grip Lat Pulldown",
+    group: "back",
+    equipment: "machine",
+    level: 1,
+    primary: ["Lats"],
+    secondary: ["Rear delts", "Biceps"],
+    steps: [
+      "Set the thigh pad snug against your legs, then stand and grab the bar out on the wide, angled ends — hands well beyond shoulder width.",
+      "Sit down with your arms stretched fully overhead and your chest lifted.",
+      "Exhale and pull the bar down to the top of your chest, driving your elbows down and out to the sides.",
+      "Squeeze for a second with your shoulder blades pulled down and together.",
+      "Inhale and let the bar rise slowly for 2–3 seconds until your arms are straight again."
+    ],
+    tips: [
+      "The wide grip shortens the pull, so use LESS weight than your normal pulldown — chasing the same pin is the most common mistake.",
+      "Compared with the standard or close grip, the wide grip works the outer lats that build back width; keep both in your week.",
+      "Pull to your collarbone in front, never behind your neck.",
+      "If your wrists ache, slide your hands in an inch — the bend in the bar should sit comfortably in your palms."
+    ],
+    setsReps: "3 sets × 10–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="152" y1="126" x2="152" y2="22"/>
+<line x1="152" y1="22" x2="114" y2="26"/>
+<line x1="86" y1="96" x2="124" y2="96"/>
+<line x1="104" y1="96" x2="104" y2="126"/>
+<line x1="110" y1="82" x2="128" y2="82"/>
+<line x1="116" y1="28" x2="117" y2="32" stroke-width="3">
+<animate attributeName="y2" values="32;58;32" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<path d="M96 34 L103 30 L131 30 L138 34" stroke-width="3">
+<animate attributeName="d" values="M96 34 L103 30 L131 30 L138 34;M96 60 L103 56 L131 56 L138 60;M96 34 L103 30 L131 30 L138 34" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="95" cy="46" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M97 56 L99 88 L120 90 L118 122"/>
+<path stroke="var(--acc,#a3e635)" d="M97 58 L106 46 L117 32">
+<animate attributeName="d" values="M97 58 L106 46 L117 32;M97 58 L99 74 L114 58;M97 58 L106 46 L117 32" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "back-reverse-grip-lat-pulldown",
+    name: "Reverse-Grip Lat Pulldown",
+    group: "back",
+    equipment: "machine",
+    level: 1,
+    primary: ["Lats"],
+    secondary: ["Biceps", "Mid-back"],
+    steps: [
+      "Set the thigh pad snug, then grab the bar underhand (palms facing you) at shoulder width.",
+      "Sit tall with arms stretched overhead, chest up, and a very slight lean back.",
+      "Exhale and pull the bar down to your mid-chest, keeping your elbows tucked close in front of your ribs.",
+      "Pause for a second with your shoulder blades squeezed down.",
+      "Inhale and straighten your arms slowly — no letting the stack yank you back up."
+    ],
+    tips: [
+      "Compared with the overhand pulldown, the underhand grip lets your biceps help and hits the lower part of your lats — expect to pull a little more weight.",
+      "The classic mistake is turning it into a biceps curl: start every rep by pulling your shoulders down, then bend the elbows.",
+      "Keep your wrists straight; if they hurt, use an EZ-curl-shaped bar or slightly wider grip.",
+      "Bar travels to the chest, not to the belly — stop when your elbows reach your sides."
+    ],
+    setsReps: "3 sets × 10–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="152" y1="126" x2="152" y2="22"/>
+<line x1="152" y1="22" x2="114" y2="26"/>
+<line x1="86" y1="96" x2="124" y2="96"/>
+<line x1="104" y1="96" x2="104" y2="126"/>
+<line x1="110" y1="82" x2="128" y2="82"/>
+<line x1="116" y1="28" x2="117" y2="34" stroke-width="3">
+<animate attributeName="y2" values="34;68;34" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<line x1="106" y1="34" x2="126" y2="34" stroke-width="3">
+<animate attributeName="y1" values="34;68;34" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="34;68;34" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="95" cy="46" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M97 56 L99 88 L120 90 L118 122"/>
+<path stroke="var(--acc,#a3e635)" d="M97 58 L104 46 L114 34">
+<animate attributeName="d" values="M97 58 L104 46 L114 34;M97 58 L106 72 L114 68;M97 58 L104 46 L114 34" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "back-single-arm-kneeling-pulldown",
+    name: "Single-Arm Kneeling Cable Pulldown",
+    group: "back",
+    equipment: "cable",
+    level: 2,
+    primary: ["Lats"],
+    secondary: ["Biceps", "Core"],
+    steps: [
+      "Clip a single D-handle to a high pulley on the cable/functional trainer and pick a light weight to start.",
+      "Take a half-kneeling position facing the stack: the knee on the working-arm side goes down on the floor, the other foot flat in front.",
+      "Reach up and grab the handle, letting the cable stretch your arm and lat fully upward.",
+      "Exhale and pull your elbow down to your ribs, keeping your torso tall — don't lean or twist.",
+      "Inhale and let the handle rise slowly until you feel the big stretch again, then finish all reps before switching sides."
+    ],
+    tips: [
+      "The huge overhead stretch at the top is the whole point — compared with the seated pulldown machine, you get a longer range, so don't cut it short.",
+      "The classic mistake is shrugging the shoulder up toward your ear; pull the shoulder blade down before your elbow bends.",
+      "Squeeze the glute of your kneeling side to keep your hips square and stop your body rocking.",
+      "No thigh pad holds you down here, so go lighter than your pulldown weight."
+    ],
+    setsReps: "3 sets × 10–12 reps per arm",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="156" y1="126" x2="156" y2="18"/>
+<line x1="156" y1="18" x2="144" y2="20"/>
+<circle cx="148" cy="25" r="4"/>
+<line x1="148" y1="28" x2="138" y2="32" stroke-width="3">
+<animate attributeName="x2" values="138;112;138" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="32;64;32" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="82" cy="46" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<line x1="84" y1="56" x2="76" y2="92"/>
+<path d="M76 92 L66 120 L44 122"/>
+<path d="M76 92 L100 94 L102 124"/>
+<path stroke="var(--acc,#a3e635)" d="M84 58 L112 44 L138 32">
+<animate attributeName="d" values="M84 58 L112 44 L138 32;M84 58 L90 78 L112 64;M84 58 L112 44 L138 32" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "back-single-arm-cable-row",
+    name: "Single-Arm Seated Cable Row",
+    group: "back",
+    equipment: "cable",
+    level: 1,
+    primary: ["Lats", "Mid-back"],
+    secondary: ["Biceps", "Core"],
+    steps: [
+      "Clip a single D-handle to the low row cable, sit on the bench, and brace both feet on the footplates.",
+      "Grab the handle with one hand, push back until your knees are slightly bent, and rest your free hand on your thigh.",
+      "Sit tall, exhale, and pull the handle to the side of your belly, sliding your elbow past your ribs.",
+      "Squeeze the shoulder blade back for a second without twisting your torso open.",
+      "Inhale and reach the arm slowly forward, letting that shoulder stretch a little, then do all reps and switch arms."
+    ],
+    tips: [
+      "One arm at a time exposes your weaker side — start every set with it and match reps, unlike the two-hand seated row where the strong side quietly takes over.",
+      "The common mistake is spinning your whole torso to move the weight; a tiny controlled rotation is fine, a big swivel is cheating.",
+      "Keep your shoulders level — don't dip toward the working arm.",
+      "Go about half of your two-arm row weight to start."
+    ],
+    setsReps: "3 sets × 10–12 reps per arm",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="26" y1="126" x2="26" y2="58"/>
+<line x1="40" y1="126" x2="40" y2="58"/>
+<line x1="26" y1="58" x2="40" y2="58"/>
+<line x1="28" y1="96" x2="38" y2="96"/>
+<line x1="28" y1="106" x2="38" y2="106"/>
+<line x1="96" y1="98" x2="136" y2="98"/>
+<line x1="116" y1="98" x2="116" y2="126"/>
+<line x1="58" y1="112" x2="70" y2="92"/>
+<line x1="41" y1="78" x2="62" y2="78" stroke-width="3">
+<animate attributeName="x2" values="62;96;62" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="106" cy="46" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M108 56 L114 92 L88 86 L66 100"/>
+<path d="M108 58 L112 74 L104 84"/>
+<path stroke="var(--acc,#a3e635)" d="M108 58 L84 68 L62 78">
+<animate attributeName="d" values="M108 58 L84 68 L62 78;M108 58 L118 78 L96 78;M108 58 L84 68 L62 78" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "back-wide-grip-cable-row",
+    name: "Wide-Grip Seated Cable Row",
+    group: "back",
+    equipment: "cable",
+    level: 1,
+    primary: ["Mid-back"],
+    secondary: ["Rear delts", "Lats", "Biceps"],
+    steps: [
+      "Attach the wide lat bar to the seated row cable, sit down, and plant your feet on the footplates.",
+      "Grab the bar overhand with hands well outside your shoulders and push back until your knees are softly bent.",
+      "Sit tall, exhale, and pull the bar to your lower chest with your elbows flared out to the sides.",
+      "Squeeze your shoulder blades together hard for a second.",
+      "Inhale and let your arms straighten slowly, keeping your chest up."
+    ],
+    tips: [
+      "Elbows OUT and bar to the chest hits the mid-back and rear delts; the regular close-grip V-handle with elbows in hits more lat — they are different rows, keep both.",
+      "The common mistake is pulling this one to the belly like a normal row — that kills the elbows-out path; aim for the lower chest.",
+      "Use noticeably less weight than your close-grip row.",
+      "Keep your neck long and shoulders away from your ears as you squeeze."
+    ],
+    setsReps: "3 sets × 10–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="26" y1="126" x2="26" y2="58"/>
+<line x1="40" y1="126" x2="40" y2="58"/>
+<line x1="26" y1="58" x2="40" y2="58"/>
+<line x1="28" y1="96" x2="38" y2="96"/>
+<line x1="28" y1="106" x2="38" y2="106"/>
+<line x1="96" y1="98" x2="136" y2="98"/>
+<line x1="116" y1="98" x2="116" y2="126"/>
+<line x1="58" y1="112" x2="70" y2="92"/>
+<line x1="41" y1="72" x2="62" y2="66" stroke-width="3">
+<animate attributeName="x2" values="62;94;62" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<line x1="62" y1="56" x2="62" y2="76" stroke-width="3">
+<animate attributeName="x1" values="62;94;62" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="x2" values="62;94;62" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="106" cy="46" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M108 56 L114 92 L88 86 L66 100"/>
+<path stroke="var(--acc,#a3e635)" d="M108 58 L85 62 L62 66">
+<animate attributeName="d" values="M108 58 L85 62 L62 66;M108 58 L117 62 L94 66;M108 58 L85 62 L62 66" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "back-smith-bent-over-row",
+    name: "Smith Machine Bent-Over Row",
+    group: "back",
+    equipment: "machine",
+    level: 2,
+    primary: ["Mid-back", "Lats"],
+    secondary: ["Lower back", "Biceps"],
+    steps: [
+      "Set the Smith bar to about mid-shin height and load light plates to learn the movement.",
+      "Stand with your feet under the bar, push your hips back, and hinge until your torso is close to 45 degrees, back flat.",
+      "Grab the bar overhand just outside your knees and unhook it by rotating your wrists.",
+      "Exhale and row the bar up the rails to your lower ribs, driving your elbows behind you.",
+      "Inhale and lower it under control to mid-shin without standing up, then re-hook when the set is done."
+    ],
+    tips: [
+      "The fixed rails remove the balance work of a free barbell row, so you can focus purely on the hinge and squeeze — a great stepping stone to the barbell version.",
+      "The classic mistake is standing taller every rep; pick your hinge angle and hold it for the whole set.",
+      "Stand so the bar path brushes your legs — too far forward and your lower back takes over.",
+      "Round-back pulling is the set-ender: when your back starts rounding, stop."
+    ],
+    setsReps: "3 sets × 8–10 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="68" y1="126" x2="68" y2="18"/>
+<line x1="80" y1="126" x2="80" y2="18"/>
+<line x1="62" y1="18" x2="86" y2="18"/>
+<circle cx="74" cy="102" r="9">
+<animate attributeName="cy" values="102;84;102" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</circle>
+<circle cx="80" cy="101" r="5">
+<animate attributeName="cy" values="101;83;101" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</circle>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="74" cy="48" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<line x1="80" y1="54" x2="104" y2="80"/>
+<path d="M104 80 L106 102 L100 124"/>
+<path d="M104 80 L112 100 L108 124"/>
+<path stroke="var(--acc,#a3e635)" d="M82 58 L78 80 L74 100">
+<animate attributeName="d" values="M82 58 L78 80 L74 100;M82 58 L92 74 L78 84;M82 58 L78 80 L74 100" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "back-landmine-row",
+    name: "Landmine Row (Meadows Row)",
+    group: "back",
+    equipment: "machine",
+    level: 2,
+    primary: ["Lats", "Mid-back"],
+    secondary: ["Rear delts", "Biceps", "Core"],
+    steps: [
+      "Wedge one end of a barbell into the landmine pivot (or a corner) and load a small plate on the free end.",
+      "Stand sideways next to the loaded end, feet about shoulder width, and hinge at the hips with a flat back.",
+      "Grip the very end of the sleeve overhand with your inside hand, bracing your free forearm on your thigh.",
+      "Exhale and row the bar end up toward your hip, driving your elbow high and behind you.",
+      "Inhale and lower it slowly until your arm is straight and your shoulder blade stretches forward, then switch sides."
+    ],
+    tips: [
+      "The thick sleeve challenges your grip — use chalk or straps so your back, not your fingers, is the limit.",
+      "The bar arcs on a fixed hinge, so the pull naturally sweeps up and back — let it, don't fight the path straight up like a dumbbell row.",
+      "The common mistake is twisting your torso open to lift higher; keep your chest square to the floor.",
+      "Small 25 lb plates leave more room to pull deep than big 45s."
+    ],
+    setsReps: "3 sets × 8–10 reps per arm",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="20" y1="126" x2="30" y2="118"/>
+<line x1="38" y1="126" x2="30" y2="118"/>
+<line x1="28" y1="120" x2="126" y2="94">
+<animate attributeName="x2" values="126;120;126" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="94;74;94" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<circle cx="114" cy="98" r="8">
+<animate attributeName="cx" values="114;108;114" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="cy" values="98;78;98" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</circle>
+<circle cx="121" cy="96" r="5">
+<animate attributeName="cx" values="121;115;121" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="cy" values="96;76;96" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</circle>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="106" cy="48" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<line x1="112" y1="54" x2="142" y2="80"/>
+<path d="M142 80 L144 102 L138 124"/>
+<path d="M142 80 L150 102 L148 124"/>
+<path stroke="var(--acc,#a3e635)" d="M114 58 L118 78 L124 96">
+<animate attributeName="d" values="M114 58 L118 78 L124 96;M114 58 L124 70 L118 78;M114 58 L118 78 L124 96" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "back-assisted-chinup",
+    name: "Assisted Chin-Up Machine",
+    group: "back",
+    equipment: "machine",
+    level: 1,
+    primary: ["Lats", "Biceps"],
+    secondary: ["Mid-back"],
+    steps: [
+      "Set the assist pin — remember, on this machine MORE weight = MORE help, so start heavy on the assist.",
+      "Climb up, kneel on the pad, and grab the closer, narrower handles UNDERHAND at shoulder width, palms facing you.",
+      "Exhale and pull yourself up until your chin reaches hand level, keeping your elbows in front of your ribs.",
+      "Inhale and lower for a slow 2–3 count until your arms are nearly straight.",
+      "Step off carefully at the end — don't hop off while the pad is under load."
+    ],
+    tips: [
+      "The underhand grip recruits your biceps more than the overhand assisted pull-up, so most people are stronger here — set a little less assist than on pull-ups.",
+      "The common mistake is stopping halfway down; the near-straight-arm stretch is where the growth is.",
+      "Think 'chest to the bar', not 'chin over' — it keeps your shoulders in a safe position.",
+      "Reduce the assist weight a pin at a time over the weeks; that's your road to a real chin-up."
+    ],
+    setsReps: "3 sets × 6–10 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="138" y1="126" x2="138" y2="18"/>
+<line x1="138" y1="18" x2="100" y2="22"/>
+<line x1="100" y1="22" x2="100" y2="30"/>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<animateTransform attributeName="transform" type="translate" values="0 0;0 -22;0 0" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<circle cx="94" cy="52" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M92 62 L88 88 L86 108 L104 112"/>
+<line x1="74" y1="116" x2="108" y2="116" stroke="var(--equip,#64748b)" stroke-width="4"/>
+</g>
+<path stroke="var(--acc,#a3e635)" stroke-width="6" stroke-linecap="round" d="M100 32 L96 46 L90 60">
+<animate attributeName="d" values="M100 32 L96 46 L90 60;M100 32 L110 44 L92 42;M100 32 L96 46 L90 60" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</svg>`
+  },
+  {
+    id: "back-smith-rack-pull",
+    name: "Smith Machine Rack Pull",
+    group: "back",
+    equipment: "machine",
+    level: 1,
+    primary: ["Lower back", "Glutes"],
+    secondary: ["Lats", "Hamstrings", "Traps"],
+    steps: [
+      "Set the Smith bar (or the safety stops) so the bar rests at knee height, and load light plates first.",
+      "Stand with your shins nearly touching the bar, feet hip width apart.",
+      "Push your hips back, grab the bar overhand just outside your legs, and flatten your back with your chest up.",
+      "Take a breath, brace your belly, and stand up tall by driving your hips forward — drag the bar up your thighs.",
+      "Exhale at the top, then push your hips back and lower the bar to the rails under control. No bouncing."
+    ],
+    tips: [
+      "This is a shortened deadlift from knee height — the fixed rails and the raised start make it the friendliest way to learn the hip hinge before a floor deadlift.",
+      "The common mistake is bending the knees into a squat; the bar starts high, so this move is almost all hips.",
+      "Finish standing tall with squeezed glutes — don't lean backward at the top.",
+      "Keep the bar dragging lightly against your thighs the whole way."
+    ],
+    setsReps: "3 sets × 8–10 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="64" y1="126" x2="64" y2="18"/>
+<line x1="76" y1="126" x2="76" y2="18"/>
+<line x1="58" y1="18" x2="82" y2="18"/>
+<line x1="56" y1="104" x2="66" y2="104"/>
+<circle cx="70" cy="100" r="9">
+<animate attributeName="cy" values="100;76;100" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</circle>
+<circle cx="76" cy="99" r="5">
+<animate attributeName="cy" values="99;75;99" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</circle>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="74" cy="48" r="9" fill="var(--fig,#cbd5e1)" stroke="none">
+<animate attributeName="cx" values="74;92;74" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="cy" values="48;34;48" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</circle>
+<path d="M80 56 L104 84 L106 106 L100 124">
+<animate attributeName="d" values="M80 56 L104 84 L106 106 L100 124;M96 44 L100 72 L102 100 L100 124;M80 56 L104 84 L106 106 L100 124" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+<path d="M104 84 L110 102 L106 124">
+<animate attributeName="d" values="M104 84 L110 102 L106 124;M100 72 L106 100 L106 124;M104 84 L110 102 L106 124" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+<path stroke="var(--acc,#a3e635)" d="M82 60 L77 80 L72 98">
+<animate attributeName="d" values="M82 60 L77 80 L72 98;M94 50 L83 65 L72 78;M82 60 L77 80 L72 98" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "back-iso-lateral-dy-row",
+    name: "Iso-Lateral D.Y. Row",
+    group: "back",
+    equipment: "machine",
+    level: 2,
+    primary: ["Upper back", "Rear delts"],
+    secondary: ["Lats", "Biceps"],
+    steps: [
+      "Load plates on the lever arms and set the seat so your chest sits comfortably against the pad with the handles reachable at shoulder height.",
+      "Sit down, press your chest into the pad, and grab the high handles overhand.",
+      "Exhale and pull the handles back with your elbows OUT wide, level with your shoulders.",
+      "Squeeze your shoulder blades together for a full second at the back.",
+      "Inhale and let the handles travel forward slowly until your upper back stretches."
+    ],
+    tips: [
+      "Elbows stay high and flared here — that's what makes it an upper-back and rear-delt machine, unlike the Iso-Lateral Low Row where elbows stay tucked for lats.",
+      "The common mistake is letting the elbows drop to the ribs mid-set, which turns it into just another lat row.",
+      "Keep your chest on the pad; driving your head back to finish the rep is momentum, not muscle.",
+      "One arm at a time works great for evening out sides."
+    ],
+    setsReps: "3 sets × 10–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="36" y1="126" x2="36" y2="34"/>
+<circle cx="22" cy="116" r="9"/>
+<circle cx="33" cy="119" r="6"/>
+<line x1="96" y1="100" x2="128" y2="100"/>
+<line x1="112" y1="100" x2="112" y2="126"/>
+<line x1="88" y1="52" x2="94" y2="86"/>
+<line x1="91" y1="86" x2="88" y2="126"/>
+<line x1="36" y1="122" x2="62" y2="46" stroke-width="3">
+<animate attributeName="x2" values="62;88;62" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="46;54;46" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="94" cy="40" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M96 50 L104 92 L94 100 L96 124"/>
+<path stroke="var(--acc,#a3e635)" d="M96 54 L79 50 L62 46">
+<animate attributeName="d" values="M96 54 L79 50 L62 46;M96 54 L107 58 L88 54;M96 54 L79 50 L62 46" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "back-diverging-row-machine",
+    name: "Diverging Seated Row Machine",
+    group: "back",
+    equipment: "machine",
+    level: 1,
+    primary: ["Mid-back", "Lats"],
+    secondary: ["Rear delts", "Biceps"],
+    steps: [
+      "Set the pin in the weight stack and adjust the seat so the handles sit at chest height with your chest against the pad.",
+      "Sit tall, press your chest into the pad, and grab the handles with straight arms.",
+      "Exhale and pull back — feel the handles swing apart and outward as they travel toward you; let your elbows follow that widening path.",
+      "Squeeze your shoulder blades together for a second.",
+      "Inhale and let the handles glide forward and back together until your arms are straight."
+    ],
+    tips: [
+      "The diverging arc matches how your shoulder blades naturally sweep out and in — compared with a straight-path row machine, the squeeze at the back feels wider; don't fight the arc.",
+      "The common mistake is leaning back off the pad to finish reps — chest stays glued down.",
+      "Try both grips if the handles offer them: vertical (palms-in) favors lats, horizontal favors upper back.",
+      "Pause a beat at full stretch; don't let the stack touch down between reps."
+    ],
+    setsReps: "3 sets × 10–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="20" y1="126" x2="20" y2="60"/>
+<line x1="34" y1="126" x2="34" y2="60"/>
+<line x1="20" y1="60" x2="34" y2="60"/>
+<line x1="22" y1="92" x2="32" y2="92"/>
+<line x1="22" y1="102" x2="32" y2="102"/>
+<line x1="52" y1="126" x2="52" y2="90"/>
+<line x1="52" y1="120" x2="60" y2="62" stroke-width="3">
+<animate attributeName="x2" values="60;86;60" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="62;72;62" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+<line x1="88" y1="58" x2="98" y2="88"/>
+<line x1="98" y1="88" x2="104" y2="98"/>
+<line x1="120" y1="98" x2="120" y2="126"/>
+<line x1="106" y1="98" x2="134" y2="98"/>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="91" cy="46" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<path d="M98 58 L122 90 L138 100 L132 124"/>
+<path stroke="var(--acc,#a3e635)" d="M98 60 L79 61 L60 62">
+<animate attributeName="d" values="M98 60 L79 61 L60 62;M98 60 L110 70 L86 72;M98 60 L79 61 L60 62" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  },
+  {
+    id: "back-standing-cable-row",
+    name: "Standing Cable Row",
+    group: "back",
+    equipment: "cable",
+    level: 1,
+    primary: ["Mid-back", "Lats"],
+    secondary: ["Core", "Biceps"],
+    steps: [
+      "Set two pulleys (or one with a rope) to chest height on the functional trainer and grab a handle in each hand.",
+      "Step back until the cables are taut, feet shoulder width or slightly staggered, knees soft.",
+      "Brace your core like someone's about to poke your stomach, and stand tall with arms stretched forward.",
+      "Exhale and pull the handles to the sides of your ribs, squeezing your shoulder blades together.",
+      "Inhale and let your arms reach slowly forward without letting the weight tip you toward the machine."
+    ],
+    tips: [
+      "Unlike the seated cable row, nothing holds your body in place — your core and legs are the bench, which is exactly what makes it worth doing.",
+      "The common mistake is leaning back and turning it into a body swing; if you must lean to finish reps, drop the pin a plate.",
+      "Keep your ribs down and glutes squeezed for a rock-solid stance.",
+      "Stagger your stance if you keep getting pulled forward."
+    ],
+    setsReps: "3 sets × 10–12 reps",
+    trackMode: "weight",
+    svg: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+<line x1="12" y1="126" x2="188" y2="126" stroke="var(--floor,#334155)" stroke-width="3" stroke-linecap="round"/>
+<g stroke="var(--equip,#64748b)" stroke-width="4" stroke-linecap="round">
+<line x1="160" y1="126" x2="160" y2="16"/>
+<line x1="160" y1="16" x2="146" y2="16"/>
+<circle cx="156" cy="62" r="4"/>
+<line x1="153" y1="62" x2="128" y2="60" stroke-width="3">
+<animate attributeName="x2" values="128;96;128" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+<animate attributeName="y2" values="60;64;60" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</line>
+</g>
+<g stroke="var(--fig,#cbd5e1)" stroke-width="6" stroke-linecap="round">
+<circle cx="72" cy="38" r="9" fill="var(--fig,#cbd5e1)" stroke="none"/>
+<line x1="74" y1="48" x2="82" y2="86"/>
+<path d="M82 86 L90 106 L86 124"/>
+<path d="M82 86 L76 104 L70 124"/>
+<path stroke="var(--acc,#a3e635)" d="M76 52 L102 56 L128 60">
+<animate attributeName="d" values="M76 52 L102 56 L128 60;M76 52 L86 68 L96 64;M76 52 L102 56 L128 60" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+</path>
+</g>
+</svg>`
+  }
+);
